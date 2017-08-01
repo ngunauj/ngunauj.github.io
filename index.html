@@ -129,19 +129,11 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                                <a class="fl mail" target="_blank" href="/1587046460@qq.com" title="mail">mail</a>
                             
-                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                                <a class="fl github" target="_blank" href="https://github.com/ngunauj" title="github">github</a>
                             
-                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
-                            
-                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
-                            
-                                <a class="fl google" target="_blank" href="#" title="google">google</a>
-                            
-                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
-                            
-                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/3533589752/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
                             
                         </ul>
                     </nav>
@@ -159,7 +151,7 @@
                 <section class="switch-part switch-part3">
                     <div id="js-friends">
                     
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/pk28/">name</a>
                     
                     </div>
                 </section>
@@ -213,19 +205,11 @@
             <nav class="header-nav">
                 <div class="social">
                     
-                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                        <a class="mail" target="_blank" href="/1587046460@qq.com" title="mail">mail</a>
                     
-                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                        <a class="github" target="_blank" href="https://github.com/ngunauj" title="github">github</a>
                     
-                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
-                    
-                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
-                    
-                        <a class="google" target="_blank" href="#" title="google">google</a>
-                    
-                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
-                    
-                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                        <a class="weibo" target="_blank" href="http://weibo.com/3533589752/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
                     
                 </div>
             </nav>
@@ -234,11 +218,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-动态规划基础(复习)" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-状压DP" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/08/01/动态规划基础(复习)/" class="article-date">
-      <time datetime="2017-08-01T04:44:58.407Z" itemprop="datePublished">2017-08-01</time>
+      <a href="/2017/08/01/状压DP/" class="article-date">
+      <time datetime="2017-08-01T08:58:13.986Z" itemprop="datePublished">2017-08-01</time>
 </a>
     </div>
   
@@ -250,7 +234,154 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>动态规划基础(复习)<br>菲波那西数列<br>记忆化搜索写法(递归)</p>
+              <p>这里已POJ3254为例。POJ3254题目大意是在1的位置放牛，并且所放的牛不能相邻。<br>可根据行数分阶段，每个阶段的状态是根据上一阶段的状态得来的也就是   <code>dp[i][s]=sum(dp[i][t])</code><br>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a  href="/2017/08/01/状压DP/#more">大航海 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数独验证" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/01/数独验证/" class="article-date">
+      <time datetime="2017-08-01T08:58:03.981Z" itemprop="datePublished">2017-08-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>今天做到了一个题目，判断数独验证。想起来以前写过的一个填数独的题目。<a href="http://poj.org/problem?id=2676" target="_blank" rel="external">http://poj.org/problem?id=2676</a><br>验证数独的题目：<a href="https://vijos.org/p/1335" target="_blank" rel="external">https://vijos.org/p/1335</a><br>是上面的填数独的简化。这里有一个比较好的方法。在判断3X3的小方块中是否满足要求时，我们可以把他转换成用sq[i][a]判断第i个小方块是否有a。 这样能简化判断步骤。<br>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a  href="/2017/08/01/数独验证/#more">大航海 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-如何高效地学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/01/如何高效地学习/" class="article-date">
+      <time datetime="2017-08-01T08:57:42.784Z" itemprop="datePublished">2017-08-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>我相信我们天朝的孩子很多都会在中学时代养成背书的习惯，一直沿用到了大学的各种期末考试。上了大学，有幸接触了不以考试为目的的编程竞赛之后，渐渐懂得了其实最好的学习方法并不是记忆，而是理解，继而掌握，最后实践。今天ｇｏｏｇｌｅ了几篇文章后简单结合自己的想法简单总结下。<br>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a  href="/2017/08/01/如何高效地学习/#more">大航海 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-动态规划基础(复习)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/01/动态规划基础(复习)/" class="article-date">
+      <time datetime="2017-08-01T08:57:23.088Z" itemprop="datePublished">2017-08-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>title:动态规划基础(复习)<br>菲波那西数列<br>记忆化搜索写法(递归)</p>
 <pre><code>#include&lt;iostream&gt;    
 #include&lt;string.h&gt;  
 using namespace std;  
@@ -268,244 +399,8 @@ int main(){
     }  
     return 0;  
 }  
-</code></pre><p>递推写法</p>
-<pre><code>/* ***********************************************
-Author        :guanjun
-Created Time  :2016/2/11 9:23:02    
-File Name     :1.cpp
-************************************************ */
-#include&lt;iostream&gt;
-using namespace std;
-int main(){
-    int n;
-    int dp[50];
-    dp[1]=dp[0]=1;
-    while(cin&gt;&gt;n){
-        if(n&lt;=1)cout&lt;&lt;1&lt;&lt;endl;
-        else{   
-            for(int i=2;i&lt;=n;i++){
-                dp[i]=dp[i-1]+dp[i-2];
-            }
-            cout&lt;&lt;dp[n]&lt;&lt;endl;
-        }
-    }
-    return 0;
-}
-</code></pre><p>其中，用数组将已经计算过的数据存储起来在下次计算的时候直接拿出来用，避免重复的运算，去掉重复的搜索树。这样的过程就叫做记忆化搜索。（上面的递归写法）<br>例题1:走楼梯问题<br>有一人要爬n阶的楼梯，他一次可以爬1阶或2阶，问要爬完这n阶楼梯，共有多少种方法？<br>设f[i]表示走到第i阶有几种方法。则f[i]=f[i-1]+f[i-2] f[1]=1;f[2]=2;</p>
-<p>动态规划原理</p>
-<p>分类加法原理 分步乘法原理</p>
-<p>例题2:最长不下降子序列问题<br>例如，下列数列<br>13 7 9 16 38 24 37 18 44 19 21 22 63 15的最长不下降子序列为<br>7 9 16 18 19 21 22 63 长度为8<br>设f[i]表示前i个数能得到的最长的子序列的长度。f[i]=max(f[j]+1) j&lt;i且a[j]&lt;=a[i]</p>
-<pre><code>/* ***********************************************
-Author        :guanjun
-Created Time  :2016/2/11 10:29:33
-File Name     :1.cpp
-************************************************ */
-#include &lt;iostream&gt;
-#include &lt;string.h&gt;
-using namespace std;
-int main()
-{
-    int a[100],dp[100];
-    int n;
-    while(cin&gt;&gt;n){
-        for(int i=1;i&lt;=n;i++)cin&gt;&gt;a[i];
-        int len=-1;
-        for(int i=1;i&lt;=n;i++){
-            dp[i]=1;
-            for(int j=1;j&lt;i;j++){
-                if(a[i]&gt;=a[j]){
-                    dp[i]=max(dp[i],dp[j]+1);
-                }
-                len=max(dp[i],len);
-            }
-        }
-        cout&lt;&lt;len&lt;&lt;endl;
-    }
-    return 0;
-}
-</code></pre><p>例题3:数字三角形<br>dp[i,j]=max(dp[i-1,j],dp[i-1,j-1])+a[i,j]<br>动态规划的定义<br>动态规划是解决多阶段<em>**</em>决策过程最优化问题的一种方法。<br>阶段：把问题分成几个相互联系的有顺序的几个环节，这些环节即称为阶段。<br>状态：某一阶段的出发位置称为状态。通常一个阶段包含若干状态。<br>决策：从某阶段的一个状态演变到下一个阶段某状态的选择。<br>状态转移方程:<br>前一阶段的终点就是后一阶段的起点，前一阶段的决策选择导出了后一阶段的状态，这种关系描述了由i阶段到i+1阶段状态的演变规律，称为状态转移方程。<br>形如：<br>f[i] = f[i - 1]+ f[i - 2]<br>f[i,j]=max(f[i-1,j],f[i-1,j-1])+a[i,j]等等<br>动态规划适用的基本条件——具有相同子问题<br>首先，我们必须要保证这个问题能够分解出几个子问题，并且能够通过这些子问题来解决这个问题。<br>其次，将这些子问题做为一个新的问题，它也能分解成为相同的子问题进行求解。<br>也就是说，假设我们一个问题被分解为了A,B,C三个部分，那么这A,B,C分别也能被分解为A,B,C三个部分，而不能是D,E,F三个部分。<br>动态规划适用的基本条件——满足最优子结构<br>问题的最优解包含着它的子问题的最优解。即不管前面的策略如何，此后的决策必须是基于当前状态（由上一次决策产生）的最优决策。</p>
-<p>动态规划适用的基本条件——满足无后效性<br>“过去的步骤只能通过当前状态影响未来的发展，当前的状态是历史的总结”。这条特征说明动态规划只适用于解决当前决策与过去状态无关的问题。状态，出现在策略任何一个位置，它的地位相同，都可实施同样策略，这就是无后效性的内涵<br>这是动态规划中极为重要的一点，如果当前问题的具体决策，会对解决其它未来的问题产生影响，如果产生影响，就无法保证决策的最优性.</p>
-<p>例4:最大子序列和<br>题意：给你一个有正有负的序列，求一个最长的连续子序列，使其和最大！<br>样例输入： -5 6 -1 5 4 -7<br>样例输出： 14<br>设dp[i]为到第i个数能得到的最大和。那么<br>if(dp[i-1]&lt;0)dp[i]=a[i];<br>else dp[i]=dp[i-1]+a[i];</p>
-<pre><code>/* ***********************************************
-Author        :guanjun
-Created Time  :2016/2/11 10:29:33
-File Name     :1.cpp
-************************************************ */
-#include &lt;iostream&gt;
-#include &lt;string.h&gt;
-using namespace std;
-int main()
-{
-    int a[100],dp[100]; 
-    int n;
-    while(cin&gt;&gt;n){
-        for(int i=1;i&lt;=n;i++)cin&gt;&gt;a[i];
-        memset(dp,0,sizeof dp);
-        int Max=-1;
-        for(int i=1;i&lt;=n;i++){  
-            if(dp[i-1]&lt;0)dp[i]=a[i];
-            else dp[i]=dp[i-1]+a[i];
-            Max=max(Max,dp[i]);
-        }
-        cout&lt;&lt;Max&lt;&lt;endl;
-    }
-    return 0;
-}
-</code></pre><p>动态规划更加实用的一般步骤:<br>1.确定状态：<br>（一维描述不完就二维，二维不行就三维四维……总之要敢想）<br>状态的参数一般有<br>1）描述位置的：前(后)i单位，第i到第j单位，坐标为(i,j)等<br>2）描述数量的：取i个，不超过i个，至少i个等<br>3）描述对后有影响的：状态压缩的，一些特殊的性质</p>
-<p>2.确定转移方程：<br>1）检查参数是否足够；<br>2）分情况：最后一次操作的方式，取不取，怎么样放，前一项是什么<br>3）初始边界是什么。<br>4）注意无后效性。比如说，求A就要求Ｂ，求Ｂ就要求Ｃ，而求Ｃ就要求Ａ，这就不符合无后效性了。<br><strong>技巧：</strong>根据状态枚举最后一次决策（即当前状态怎么来的）就可确定出状态转移方程！</p>
-<p>3.确定编程实现方式<br>1）递推<br>2）记忆化搜索<br>凡是可以递推的均可以用记忆化搜索，<br>但是有的问题却只能用记忆化搜索解决！<br>例5:滑雪（poj1088）<br>Michael喜欢滑雪，这并不奇怪， 因为滑雪的确很刺激。可是为了获得速度，滑的区域必须向下倾斜，而且当你滑到坡底，你不得不再次走上坡或者等待升降机来载你。Michael想知道载一个区域中最长底滑坡。区域由一个二维数组给出。数组的每个数字代表点的高度。下面是一个例子<br>1　2　3　4　5<br>16 17 18 19　6<br>15 24 25 20　7<br>14 23 22 21　8<br>13 12 11 10　9<br>一个人可以从某个点滑向上下左右相邻四个点之一，当且仅当高度减小。在上面的例子中，一条可滑行的滑坡为24-17-16-1。当然25-24-23-…-3-2-1更长。事实上，这是最长的一条。 　<br>第一步：确定状态<br>f[i][j]表示从（i，j）滑下的最长路径长度<br>第二步：确定状态转移方程<br>——由于f[i][j]由上下左右四个方向转移过来<br>F[i][j] = max {f[i - 1][j] + 1(a[i - 1][j] &lt;a[i][j])<br>　　　　　{f[i + 1][j] + 1(a[i + 1][j] &lt;a[i][j])<br>　　　　　{f[i][j - 1] + 1 (a[i][j - 1] &lt;a[i][j])<br>　　　　　{f[i][j + 1] + 1(a[i][j + 1] &lt;a[i][j])<br>（初值）：f[i][j] = 0<br>第三步：确定实现方法<br>相信同学们已经看出问题了，我们没法通过递推的方式在算f[i][j]之前将他上下左右四个点的值都求出来。<br>所以记忆化搜索就成为解决这个问题的唯一办法！</p>
-<pre><code>/* ***********************************************
-Author:guanjun
-Created Time  :2016/2/11 10:29:33
-File Name :1.cpp
-************************************************ */
-#include &lt;iostream&gt;
-#include &lt;string.h&gt;
-using namespace std;
-int dp[110][110];
-int a[110][110];
-int n,m;
-int dfs(int x,int y){
-    if(dp[x][y]!=-1)return dp[x][y];
-    dp[x][y]=1;
-    if((a[x-1][y]&lt;a[x][y])&amp;&amp;(x&gt;1))dp[x][y]=max(dp[x][y],dfs(x-1,y)+1);
-    if((a[x+1][y]&lt;a[x][y])&amp;&amp;(x&lt;n))dp[x][y]=max(dp[x][y],dfs(x+1,y)+1);
-    if((a[x][y-1]&lt;a[x][y])&amp;&amp;(y&gt;1))dp[x][y]=max(dp[x][y],dfs(x,y-1)+1);
-    if((a[x][y+1]&lt;a[x][y])&amp;&amp;(y&lt;n))dp[x][y]=max(dp[x][y],dfs(x,y+1)+1);
-    return dp[x][y];
-}
-int main()
-{
-    while(cin&gt;&gt;n&gt;&gt;m){
-        memset(dp,-1,sizeof dp);
-        for(int i=1;i&lt;=n;i++){
-            for(int j=1;j&lt;=m;j++)
-                cin&gt;&gt;a[i][j];
-        }
-        int Max=-1;
-        for(int i=1;i&lt;=n;i++)
-            for(int j=1;j&lt;=m;j++){
-                Max=max(Max,dfs(i,j));
-            }
-        cout&lt;&lt;Max&lt;&lt;endl;
-    }
-return 0;
-}
-</code></pre><p>例6：最长公共子序列<br>一个给定序列的子序列是在该序列中删去若干元素后得到的序列。<br>给定两个序列X和Y，当另一序列Z既是X的子序列又是Y的子序列时，称Z是序列X和Y的公共子序列。<br>最长公共子序列:公共子序列中长度最长的子序列。<br>给定两个序列X={x1,x2,…,xm}和Y={y1,y2,…, yn}，找出X和Y的一个最长公共子序列。<br>样例输入:<br>abcfbc<br>abfcab<br>样例输出：4<br>第一步：确定状态<br>f[i][j]表示前一个字符串的前i位与后一个字符串的前j位的最长公共子序列长度<br>第二步：确定状态转移方程<br>当x[i]==y[j]，长度为i的子序列和长度为j的子序列的最长公共子序列就是长度为i-1和长度为j-1 的子序列中最长的公共子序列加上1<br>即：f[i][j]=f[i-1][j-1]+1<br>当x[i]!=x[j]，第一个序列长度为i的子序列和第二个序列中长度为j的子序列的公共子序列中x[i]和y[j]不同时出现。<br>也就是说在x[0]~x[i]和y[0]~y[i]的最长公共子序列实际上与x[0]~x[i-1]和 y[0]~y[i]的最长公共子序列一样或者与x[0]~x[i]和 y[0]~y[i-1]的最长公共子序列一样<br>即：f[i][j]=max(f[i - 1][j] ,f[i][j - 1])<br>第三步：确定程序实现方式<br>递推或记忆化搜索均可<br>f[i][j]=f[i-1][j-1]+1<br>f[i][j]=max(f[i - 1][j] ,f[i][j - 1])</p>
-<p>以上例题均属于线性dp讨论范畴<br>2/11/2016 12:14:34 PM<br>参考nwpu课件复习。</p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数独验证" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/01/数独验证/" class="article-date">
-      <time datetime="2017-08-01T04:44:58.407Z" itemprop="datePublished">2017-08-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+</code></pre>
           
-        <p>今天做到了一个题目，判断数独验证。想起来以前写过的一个填数独的题目。<a href="http://poj.org/problem?id=2676" target="_blank" rel="external">http://poj.org/problem?id=2676</a><br>验证数独的题目：<a href="https://vijos.org/p/1335" target="_blank" rel="external">https://vijos.org/p/1335</a><br>是上面的填数独的简化。这里有一个比较好的方法。在判断3X3的小方块中是否满足要求时，我们可以把他转换成用sq[i][a]判断第i个小方块是否有a。 这样能简化判断步骤。<br>具体见代码。</p>
-<pre><code>/* ***********************************************
-Author:guanjun
-Created Time  :2016/2/18 21:37:42
-File Name :vijosp1335.cpp
-************************************************ */
-#include &lt;iostream&gt;
-#include &lt;cstring&gt;
-#include &lt;cstdlib&gt;
-#include &lt;stdio.h&gt;
-#include &lt;algorithm&gt;
-#include &lt;vector&gt;
-#include &lt;queue&gt;
-#include &lt;set&gt;
-#include &lt;map&gt;
-#include &lt;string&gt;
-#include &lt;math.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;iomanip&gt;
-#include &lt;list&gt;
-#include &lt;deque&gt;
-#include &lt;stack&gt;
-#define ull unsigned long long
-#define ll long long
-#define mod 90001
-#define INF 0x3f3f3f3f
-#define maxn 10000+10
-#define cle(a) memset(a,0,sizeof(a))
-const ull inf = 1LL &lt;&lt; 61;
-const double eps=1e-5;
-using namespace std;
-
-bool cmp(int a,int b){
-return a&gt;b;
-}
-int main()
-{
-#ifndef ONLINE_JUDGE
-//freopen(&quot;in.txt&quot;,&quot;r&quot;,stdin);
-#endif
-//freopen(&quot;out.txt&quot;,&quot;w&quot;,stdout);
-    int row[10][10],col[10][10],sq[10][10];
-    int t,a;
-    cin&gt;&gt;t;
-    while(t--){
-        cle(row),cle(col);cle(sq);
-        for(int  i=1;i&lt;=9;i++){
-            for(int j=1;j&lt;=9;j++){
-                cin&gt;&gt;a;
-                row[i][a]=1;
-                col[j][a]=1;
-                int x=(i-1)/3*3+(j-1)/3;//重点
-                sq[x][a]=1;
-            }
-        }
-        int mark=0;
-        for(int i=1;i&lt;=9;i++){
-            for(int j=1;j&lt;=9;j++){
-                if(col[j][i]==0||row[i][j]==0||!sq[i-1][j]){mark=1;break;}
-            }
-            if(mark)break;
-        }
-        if(mark)puts(&quot;Wrong&quot;);
-        else puts(&quot;Right&quot;);
-
-    }
-return 0;
-}  
-</code></pre><p>2/19/2016 8:38:23 AM</p>
-
       
       
     </div>
@@ -516,12 +411,17 @@ return 0;
 
       
       
+        <p class="article-more-link">
+          <a  href="/2017/08/01/动态规划基础(复习)/#more">大航海 >></a>
+        </p>
+      
       <div class="clearfix"></div>
     </div>
     
   </div>
   
 </article>
+
 
 
 
@@ -536,7 +436,7 @@ return 0;
   
     <div class="article-meta">
       <a href="/2017/08/01/人不聪明怎么办？/" class="article-date">
-      <time datetime="2017-08-01T04:44:52.368Z" itemprop="datePublished">2017-08-01</time>
+      <time datetime="2017-08-01T08:54:15.055Z" itemprop="datePublished">2017-08-01</time>
 </a>
     </div>
   
@@ -548,38 +448,9 @@ return 0;
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="人不聪明怎么办？"><a href="#人不聪明怎么办？" class="headerlink" title="人不聪明怎么办？"></a>人不聪明怎么办？</h1><p>哎，最近被<strong>虐</strong>惨了。发现自己的智商有问题..为什么同样的一道题目，没有过多的算法，我却想不到怎么做而他们却轻松解决。<br>我一开始想是不是我的智商有问题,其实这个问题已经翻来覆去想了很多遍了，初中，高中翻来覆去的想，每次想完都觉得不是智商的问题，是自己不够努力。还记得刘老师曾经说“马虎”的问题，不要说这道题结果算错了..说到底就是你做题少不熟练，1+1=2谁都不会算错。其实也是怎么回事…  </p>
-<hr>
-<p>以下是我在网上找到的。  </p>
-<blockquote>
-<p>网友GayScript的回答：<br>如果你在网上搜索「NOIP 2007 全国一等奖获奖名单」应该能在江苏省那边看到我的名字，大概是在全省第四十多名。你再往上看几个名字，会发现另一个与我同校的男生，叫孙。</p>
-<p>那年我们班上去复试的有十来个，但一等奖的就两个，一个我 290 分，一个是孙 300 分。别的最高分就只有 120 分了。</p>
-<p>孙的编程特别厉害，属于那种脑袋特别灵，平时不看书也总能考最高分的。当年他高二的时候就已经是一等奖了，高三的时候再次无悬念拿了一等奖。而我花了两年的时间才拿了那个一等奖。</p>
-<p>我记得当年复试的第一道题是排序，我用的快速排序法，拿了 70 分，而孙用的平衡二叉树，100 分。第二道题是很简单但很细碎的字符串处理，我们都是满分。第三道题我用的贪心法，第四道题我好像用的弗洛伊德算法（我也记不清了），两道题加起来才得了 120 分。而孙第三题我也不记得他用了什么算法了，拿了满分。第四题他没来得及写完代码，0 分。</p>
-<p>我四道题都做了，除了第二题满分外，别的三道题算法都不够好，都是得了部分分数，总分 290 分。而他每做一题，便是最好的算法，都是满分，如果再给他一点时间，我绝对相信他第四题也能拿满分。</p>
-<p>是的，他平时上课从不认真听讲，课后也不会太花时间做练习，老师布置的程序题他总是第一个完成，然后就在那边玩游戏，而我们另外的人还在苦思冥想。</p>
-<p>的确，这世上真的有不怎么学习也能成绩拔尖的人，比如孙。</p>
-<p>的确，这世上的确有很多不够聪明的人，比如我，还有我那群小伙伴们。</p>
-<p>人不聪明怎么办？</p>
-<p>怨天尤人？在地上打滚？骂脏话？吐痰？喷口水？随地大小便？</p>
-<p><strong>还是不聪明啊</strong>。人家聪明的人还是轻而易举地拿了一等奖。</p>
-<p>是的，这个世界是不公平的。这是谁都没办法改变的事。我们能改变的，唯有自己。</p>
-<p>我拿一等奖的时候，好几个朋友都说，我拿一等奖是理所当然的。因为这群人里，我对编程付出的心血最多，当他们忙着数学奥赛、物理奥赛、化学奥赛同时学好几样奥赛的时候，我一门心思地学编程。我把班上所有学编程的同学的参考资料一一借来（有些参考资料太贵，没舍得买），一道题一道题地做完了，能独立完成的，直接 Pass ，不能独立完成的，看答案，看了答案能理解的就理解，然后自己再重做一遍，不能理解的 —— 把整个算法和编程背下来。</p>
-<p>有段时间我无法理解快速排序，便把快速排序背下来了。谁知后来真派上用场了。</p>
-<p>有段时间我无法理解弗洛伊德算法，便把弗洛伊德算法背下来了。谁知后来真派上用场了。</p>
-<p>有段时间我无法理解 …… 算法，便把 …… 算法背下来了。虽然后来没用上。</p>
-<p>有段时间我总是没办法理解动态规划，看了好久好久，做了好久好久的题目，终于灵光一闪，顿悟了。</p>
-<p>有段时间我总是没办法理解二叉树排序，看了好久好久，做了好久好久的题目，最终还是不太会。整个「树」和「图」都是我的弱项。</p>
-<p>那一年我几乎一做完了别的作业，就翻看编程资料，写程序。那时候只有周末才能去机房上课，平时便都把程序写在草稿纸上，一行一行地写，连末尾的括号、分号都不放过。</p>
-<p>那一年我少说做完了十多本参考资料，几千道程序题吧。</p>
-<p>的确，到头来我还是比不上孙的成绩，可是，我已经远远地把其他人甩到后头去了。</p>
-<p>许多人都喜欢在遇到不公平的事情时抱怨、哀叹，不知道该怎么办。仿佛抱怨完了，这事情就没了。可我总觉得，自己的现状你自己不改变，难道还会有谁来帮你改变吗？你什么都不做，抱怨完了这次，还会抱怨下次的。</p>
-<p>还有人喜欢抱怨说自己努力了也没用。我觉得特别好笑。就好像我那些同学也做了参考题，却没拿一等奖一样。我只想说 —— 我们做的题量，根本不在一个数量级。你刚刚起了个头就说看不到未来 —— 废话，要这么容易看到未来的话，这世上就没那么多一天到晚怨天尤人的人了。</p>
-<p>如果你不够聪明，而你又想改变自己，那你就得多多努力。不，不是努力一点，请你很努力。的确，你努力了未必有回报，你努力了也许还是比不上那些天生聪明的人。可我告诉你，这世上虽然真有天生聪明的人，可我们绝大多数人都是不那么聪明的。你只要多多努力，把那些同样平凡却只会抱怨、不够努力的人甩到后头就行了。  </p>
-<p><strong>你已经够矮了，那就爬到一个高处。</strong><br><a href="http://wuliaoo.com/renbucongming.html" target="_blank" rel="external">原文网址</a><br><img src="http://ww4.sinaimg.cn/mw690/62826d27jw1eai2znn5r6j20go09bwet.jpg" alt="图">  </p>
-</blockquote>
-<p>其实，到这里我想我不应该在犹豫我是不是智商比较低…我本来就不是那种聪明人，不要找借口了。而我现在能做的就是把那些和我在同一智商水平上的人超越。<strong>努力！</strong></p>
-
+              <h1 id="人不聪明怎么办？"><a href="#人不聪明怎么办？" class="headerlink" title="人不聪明怎么办？"></a>人不聪明怎么办？</h1><p>哎，最近被<strong>虐</strong>惨了。发现自己的智商有问题..为什么同样的一道题目，没有过多的算法，我却想不到怎么做而他们却轻松解决。<br>我一开始想是不是我的智商有问题,其实这个问题已经翻来覆去想了很多遍了，初中，高中翻来覆去的想，每次想完都觉得不是智商的问题，是自己不够努力。还记得刘老师曾经说“马虎”的问题，不要说这道题结果算错了..说到底就是你做题少不熟练，1+1=2谁都不会算错。其实也是怎么回事…  </p>
+<h2 id=""><a href="#" class="headerlink" title=""></a>
+          
       
       
     </div>
@@ -589,6 +460,10 @@ return 0;
       
 
       
+      
+        <p class="article-more-link">
+          <a  href="/2017/08/01/人不聪明怎么办？/#more">大航海 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -605,173 +480,10 @@ return 0;
 
 
 
-  
-    <article id="post-状压DP" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/01/状压DP/" class="article-date">
-      <time datetime="2017-08-01T04:44:52.364Z" itemprop="datePublished">2017-08-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>这里已POJ3254为例。POJ3254题目大意是在1的位置放牛，并且所放的牛不能相邻。<br>可根据行数分阶段，每个阶段的状态是根据上一阶段的状态得来的也就是   <code>dp[i][s]=sum(dp[i][t])</code>  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div></pre></td><td class="code"><pre><div class="line">/* ***********************************************</div><div class="line">Author        :guanjun</div><div class="line">Created Time  :2015/8/1 9:54:13</div><div class="line">File Name     :1.cpp</div><div class="line">************************************************ */</div><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">#include &lt;cstdlib&gt;</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">#include &lt;vector&gt;</div><div class="line">#include &lt;queue&gt;</div><div class="line">#include &lt;set&gt;</div><div class="line">#include &lt;map&gt;</div><div class="line">#include &lt;string&gt;</div><div class="line">#include &lt;math.h&gt;</div><div class="line">#include &lt;stdlib.h&gt;</div><div class="line">#include &lt;iomanip&gt;</div><div class="line">#include &lt;list&gt;</div><div class="line">#include &lt;deque&gt;</div><div class="line">#include &lt;stack&gt;</div><div class="line">#define ull unsigned long long</div><div class="line">#define ll long long</div><div class="line">#define mod 100000000</div><div class="line">#define INF 1&lt;&lt;30</div><div class="line">#define maxn 10000+10</div><div class="line">#define cle(a) memset(a,0,sizeof(a))</div><div class="line">const int N=13;</div><div class="line">const int M=1&lt;&lt;N;</div><div class="line">const double eps=1e-5;</div><div class="line">using namespace std;</div><div class="line">bool cmp(int a,int b)&#123;</div><div class="line">    return a&gt;b;</div><div class="line">&#125;</div><div class="line">int n,m;</div><div class="line">int st[M],mp[M];//分别存储每一行的状态和给出的状态</div><div class="line">int dp[N][M];//表示第i行状态为j时可以放的牛的数量</div><div class="line">bool judge1(int x)&#123;</div><div class="line">    return (x&amp;(x&lt;&lt;1));//判断两头牛是否相邻 移动一位&amp;</div><div class="line">&#125;</div><div class="line">bool judge2(int i,int x)&#123;</div><div class="line">    return (mp[i]&amp;st[x]);//判断当前的状态是否在 已经给出的状态中</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    #ifndef ONLINE_JUDGE</div><div class="line">    freopen(&quot;in.txt&quot;,&quot;r&quot;,stdin);</div><div class="line">    #endif</div><div class="line">    //freopen(&quot;out.txt&quot;,&quot;w&quot;,stdout);</div><div class="line">    while(cin&gt;&gt;n&gt;&gt;m)&#123;</div><div class="line">        //每一行可能的状态 处理出来</div><div class="line">        //dp[i][s]=sum(dp[i-1][t]);</div><div class="line">        cle(dp);</div><div class="line">        cle(st);</div><div class="line">        cle(mp);</div><div class="line">        int x;</div><div class="line">        for(int i=1;i&lt;=n;i++)&#123;</div><div class="line">            for(int j=0;j&lt;m;j++)&#123;</div><div class="line">                cin&gt;&gt;x;</div><div class="line">                if(x==0)//为什么当x==0时处理呢？因为存在这一行都不放牛的情况</div><div class="line">                    mp[i]+=(1&lt;&lt;j);//存储当前行的状态</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        //初始化满足的在非约束条件下的每行可能的状态</div><div class="line">        int k=0;</div><div class="line">        for(int i=0;i&lt;(1&lt;&lt;m);i++)&#123;</div><div class="line">            if(!judge1(i))</div><div class="line">                st[k++]=i;//存储满足牛不相邻的状态(有的题目是通过dfs找的)</div><div class="line">                //k的值也就是 满足牛不相邻的状态的个数</div><div class="line">        &#125;</div><div class="line">        //dp 边界的处理</div><div class="line">        //因为dp的时候要涉及到上一行 所以这里先处理出第一行</div><div class="line"></div><div class="line">        for(int i=0;i&lt;k;i++)&#123;</div><div class="line">            if(!judge2(1,i))</div><div class="line">                dp[1][i]=1;</div><div class="line">        &#125;</div><div class="line">        //正式dp</div><div class="line">        for(int i=2;i&lt;=n;i++)&#123;</div><div class="line">            for(int j=0;j&lt;k;j++)&#123;</div><div class="line">                if(!judge2(i,j))&#123;</div><div class="line">                    for(int t=0;t&lt;k;t++)&#123;</div><div class="line">                        if(!judge2(i-1,t))&#123;</div><div class="line">                            if(!(st[j]&amp;st[t]))&#123;//不相互包含</div><div class="line">                                dp[i][j]+=dp[i-1][t];</div><div class="line">                            &#125;</div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        int ans=0;</div><div class="line">        for(int i=0;i&lt;k;i++)&#123;</div><div class="line">            ans+=dp[n][i];</div><div class="line">            ans%=mod;</div><div class="line">        &#125;   </div><div class="line">        printf(&quot;%d\n&quot;,ans);</div><div class="line">    &#125;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-如何高效地学习" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/01/如何高效地学习/" class="article-date">
-      <time datetime="2017-08-01T04:44:52.360Z" itemprop="datePublished">2017-08-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>我相信我们天朝的孩子很多都会在中学时代养成背书的习惯，一直沿用到了大学的各种期末考试。上了大学，有幸接触了不以考试为目的的编程竞赛之后，渐渐懂得了其实最好的学习方法并不是记忆，而是理解，继而掌握，最后实践。今天ｇｏｏｇｌｅ了几篇文章后简单结合自己的想法简单总结下。</p>
-<p>传统的学习方法，坐在教室里听老师上课，看书，并非高效的方法，因为他们过于被动，你听完老师一堂课，或者看完一本书，如果你感觉什么都好对，一切都很合理，那么你其实什么都没学到。这就跟你看完一个算法的讲解，陷入作者给你设计的乌托邦里面，你感觉everything is perfect ，结果碰到了具体问题你还是解决不了，因为，虽然这是一把利剑，但是你没有与它磨合，挣扎的过程，你根本不知道怎么挥舞剑招<br>所以首先，你要做的是不断地寻找自己不会的事物去挑战。你应该经常提醒自己学到的实在太少（实际上这往往是事实），每当你感觉自己学到一些东西，去找些问题解决一下，去测试你的能力，你会发现你会的比你想象中要少的多。<br>如果你感到困惑，那说明你正在学到东西。It is by struggling that we learn.</p>
-<p>１：寻找一些在你能力极限附近的难题来解决，这比你一页页的翻书要来的有意义的多，解决一个难题给你带来的成就感与理解度的提升也是你看书上课无法比拟的。</p>
-<p>２：学完一个东西后，重新从无到有构思一遍，总结出你对这个东西的理解，这个过程你不能借助与任何的参考资料。你会发现在这个过程里，你的大脑会难受，会挣扎，这就是学习到东西了。</p>
-<p>３：避免从一个地方学东西，寻找各种资源来学习，一叶障目不见泰山就是这个道理。</p>
-<p>４：永远别尝试去记住一个东西，而是学完之后赶紧忘掉，然后自己发明之．上大学后我再也没有去背书了，偶尔为了期末还是妥协了一下，但是我可以自信的说绝大多数时间我都在做提高能力的事情而非提高成绩，想起来高中的时候背诵各种文言文，诗句之类的现在已经完全想不起来几句了，或许这也是背诵的特点，几乎都是短暂性的记忆，无法长久．</p>
-<p>５：把你学到的东西跟一个完全不懂的人讲．（好比如你学完线段树后跟从来没接触过算法的人讲线段树，你就会发现自己是否真的已经掌握了这个ｉｄｅａ）</p>
-<p>６：别同时做很多件事情，那样只会分散你的注意力．</p>
-<p>７：一旦你理解，掌握一样东西，你想忘掉基本不可能了，除非有人拿板砖拍你脑门．<br>交叉式的学习比长时间学一个点来得高效。<br>What researchers have found is that interleaved practice is far superior. In interleaved practice, you intentionally mix up topics. Want to become a better mathematician? Do not spend one month studying combinatorics, one month studying calculus and so on. Instead, work on various mathematical topics, mixing them randomly.<br>Interleaved practice feels much harder (e.g., “you feel confused”), and it feels discouraging because progress appears to be slow. However, this confusion you feel… that is your brain learning.<br>Interleaved practice is exactly what a real project forces you to do. This means that real-world experience where you get to solve hard problems is probably a much more efficient learning strategy than college.</p>
-<p>下面是最赞同的一句话：<br>Given a choice between doing challenging real work, and taking classes, you should always take the challenging work instead.</p>
-<p>给你一个选择，去教室上课还是去解决一个非常有挑战性的问题，你应该总是选择后者。<br>你大可不必盲从于世俗，你应该积极寻找自己的学习节奏，（该翘的课还是得翘），毕竟绝大多数人的选择往往是合理的，而非合适的．</p>
-<p>现在看到学校里开始重视算法课了，这确实很让人欣喜，然而，学生从刚入学，还没有什么编程基础，就开始学算法，并非一件好事，因为学习的逻辑关系搞错了，这个世界肯定是先有各种各样的问题，才会有各种各样的解决方法。</p>
-<p>从问题本身出发，不断地寻找一些适合自己的难题来挑战，着实是一种不错的学习方法，你无需理会学的东西是否成体系，以后自然会有时间让你去串联自己学到的一个又一个的点．<br>奥，还有一点，如果你还不会利用ｇｏｏｇｌｅ搜索资源，那么就请先学会如何使用ｇｏｏｇｌｅ吧，这是你迈向自由，快乐学习的第一步。</p>
-<p>转自：<a href="http://wuyiqi.net/house/learning_efficiently" target="_blank" rel="external">http://wuyiqi.net/house/learning_efficiently</a></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/08/01/hello-world/" class="article-date">
-      <time datetime="2017-08-01T02:50:17.585Z" itemprop="datePublished">2017-08-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
 
   
   
+
 </div>
       <footer id="footer">
     <div class="outer">
@@ -787,7 +499,7 @@ return 0;
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
+                        <span id="site-visit" >到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
