@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | guanjun&#39;s blog</title>
+  <title>guanjun&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="动态规划基础(复习)菲波那西数列记忆化搜索写法(递归) #include&amp;lt;iostream&amp;gt;     #include&amp;lt;string.h&amp;gt;   using namespace std;   int dp[50];   int f(int i){       if(dp[i]!=-1)return dp[i];       else return dp[i]=f(i-1)+f">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/08/01/hello-world/index.html">
+<meta property="og:title" content="guanjun&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/2017/08/01/动态规划基础(复习)/index.html">
 <meta property="og:site_name" content="guanjun&#39;s blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="动态规划基础(复习)菲波那西数列记忆化搜索写法(递归) #include&amp;lt;iostream&amp;gt;     #include&amp;lt;string.h&amp;gt;   using namespace std;   int dp[50];   int f(int i){       if(dp[i]!=-1)return dp[i];       else return dp[i]=f(i-1)+f">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-01T02:50:17.585Z">
+<meta property="og:updated_time" content="2017-08-01T01:35:02.156Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="guanjun&#39;s blog">
+<meta name="twitter:description" content="动态规划基础(复习)菲波那西数列记忆化搜索写法(递归) #include&amp;lt;iostream&amp;gt;     #include&amp;lt;string.h&amp;gt;   using namespace std;   int dp[50];   int f(int i){       if(dp[i]!=-1)return dp[i];       else return dp[i]=f(i-1)+f">
   
     <link rel="alternative" href="/atom.xml" title="guanjun&#39;s blog" type="application/atom+xml">
   
@@ -233,11 +233,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-动态规划基础(复习)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/08/01/hello-world/" class="article-date">
-      <time datetime="2017-08-01T02:50:17.585Z" itemprop="datePublished">2017-08-01</time>
+      <a href="/2017/08/01/动态规划基础(复习)/" class="article-date">
+      <time datetime="2017-08-01T04:44:58.407Z" itemprop="datePublished">2017-08-01</time>
 </a>
     </div>
   
@@ -246,36 +246,152 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Hello World
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>动态规划基础(复习)<br>菲波那西数列<br>记忆化搜索写法(递归)</p>
+<pre><code>#include&lt;iostream&gt;    
+#include&lt;string.h&gt;  
+using namespace std;  
+int dp[50];  
+int f(int i){  
+    if(dp[i]!=-1)return dp[i];  
+    else return dp[i]=f(i-1)+f(i-2);  
+}  
+int main(){  
+    int n;  
+    while(cin&gt;&gt;n){  
+            memset(dp,-1,sizeof dp);  
+            dp[0]=1;dp[1]=1;  
+            cout&lt;&lt;f(n)&lt;&lt;endl;  
+    }  
+    return 0;  
+}  
+</code></pre><p>递推写法</p>
+<pre><code>/* ***********************************************
+Author        :guanjun
+Created Time  :2016/2/11 9:23:02    
+File Name     :1.cpp
+************************************************ */
+#include&lt;iostream&gt;
+using namespace std;
+int main(){
+    int n;
+    int dp[50];
+    dp[1]=dp[0]=1;
+    while(cin&gt;&gt;n){
+        if(n&lt;=1)cout&lt;&lt;1&lt;&lt;endl;
+        else{   
+            for(int i=2;i&lt;=n;i++){
+                dp[i]=dp[i-1]+dp[i-2];
+            }
+            cout&lt;&lt;dp[n]&lt;&lt;endl;
+        }
+    }
+    return 0;
+}
+</code></pre><p>其中，用数组将已经计算过的数据存储起来在下次计算的时候直接拿出来用，避免重复的运算，去掉重复的搜索树。这样的过程就叫做记忆化搜索。（上面的递归写法）<br>例题1:走楼梯问题<br>有一人要爬n阶的楼梯，他一次可以爬1阶或2阶，问要爬完这n阶楼梯，共有多少种方法？<br>设f[i]表示走到第i阶有几种方法。则f[i]=f[i-1]+f[i-2] f[1]=1;f[2]=2;</p>
+<p>动态规划原理</p>
+<p>分类加法原理 分步乘法原理</p>
+<p>例题2:最长不下降子序列问题<br>例如，下列数列<br>13 7 9 16 38 24 37 18 44 19 21 22 63 15的最长不下降子序列为<br>7 9 16 18 19 21 22 63 长度为8<br>设f[i]表示前i个数能得到的最长的子序列的长度。f[i]=max(f[j]+1) j&lt;i且a[j]&lt;=a[i]</p>
+<pre><code>/* ***********************************************
+Author        :guanjun
+Created Time  :2016/2/11 10:29:33
+File Name     :1.cpp
+************************************************ */
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+int main()
+{
+    int a[100],dp[100];
+    int n;
+    while(cin&gt;&gt;n){
+        for(int i=1;i&lt;=n;i++)cin&gt;&gt;a[i];
+        int len=-1;
+        for(int i=1;i&lt;=n;i++){
+            dp[i]=1;
+            for(int j=1;j&lt;i;j++){
+                if(a[i]&gt;=a[j]){
+                    dp[i]=max(dp[i],dp[j]+1);
+                }
+                len=max(dp[i],len);
+            }
+        }
+        cout&lt;&lt;len&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre><p>例题3:数字三角形<br>dp[i,j]=max(dp[i-1,j],dp[i-1,j-1])+a[i,j]<br>动态规划的定义<br>动态规划是解决多阶段<em>**</em>决策过程最优化问题的一种方法。<br>阶段：把问题分成几个相互联系的有顺序的几个环节，这些环节即称为阶段。<br>状态：某一阶段的出发位置称为状态。通常一个阶段包含若干状态。<br>决策：从某阶段的一个状态演变到下一个阶段某状态的选择。<br>状态转移方程:<br>前一阶段的终点就是后一阶段的起点，前一阶段的决策选择导出了后一阶段的状态，这种关系描述了由i阶段到i+1阶段状态的演变规律，称为状态转移方程。<br>形如：<br>f[i] = f[i - 1]+ f[i - 2]<br>f[i,j]=max(f[i-1,j],f[i-1,j-1])+a[i,j]等等<br>动态规划适用的基本条件——具有相同子问题<br>首先，我们必须要保证这个问题能够分解出几个子问题，并且能够通过这些子问题来解决这个问题。<br>其次，将这些子问题做为一个新的问题，它也能分解成为相同的子问题进行求解。<br>也就是说，假设我们一个问题被分解为了A,B,C三个部分，那么这A,B,C分别也能被分解为A,B,C三个部分，而不能是D,E,F三个部分。<br>动态规划适用的基本条件——满足最优子结构<br>问题的最优解包含着它的子问题的最优解。即不管前面的策略如何，此后的决策必须是基于当前状态（由上一次决策产生）的最优决策。</p>
+<p>动态规划适用的基本条件——满足无后效性<br>“过去的步骤只能通过当前状态影响未来的发展，当前的状态是历史的总结”。这条特征说明动态规划只适用于解决当前决策与过去状态无关的问题。状态，出现在策略任何一个位置，它的地位相同，都可实施同样策略，这就是无后效性的内涵<br>这是动态规划中极为重要的一点，如果当前问题的具体决策，会对解决其它未来的问题产生影响，如果产生影响，就无法保证决策的最优性.</p>
+<p>例4:最大子序列和<br>题意：给你一个有正有负的序列，求一个最长的连续子序列，使其和最大！<br>样例输入： -5 6 -1 5 4 -7<br>样例输出： 14<br>设dp[i]为到第i个数能得到的最大和。那么<br>if(dp[i-1]&lt;0)dp[i]=a[i];<br>else dp[i]=dp[i-1]+a[i];</p>
+<pre><code>/* ***********************************************
+Author        :guanjun
+Created Time  :2016/2/11 10:29:33
+File Name     :1.cpp
+************************************************ */
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+int main()
+{
+    int a[100],dp[100]; 
+    int n;
+    while(cin&gt;&gt;n){
+        for(int i=1;i&lt;=n;i++)cin&gt;&gt;a[i];
+        memset(dp,0,sizeof dp);
+        int Max=-1;
+        for(int i=1;i&lt;=n;i++){  
+            if(dp[i-1]&lt;0)dp[i]=a[i];
+            else dp[i]=dp[i-1]+a[i];
+            Max=max(Max,dp[i]);
+        }
+        cout&lt;&lt;Max&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre><p>动态规划更加实用的一般步骤:<br>1.确定状态：<br>（一维描述不完就二维，二维不行就三维四维……总之要敢想）<br>状态的参数一般有<br>1）描述位置的：前(后)i单位，第i到第j单位，坐标为(i,j)等<br>2）描述数量的：取i个，不超过i个，至少i个等<br>3）描述对后有影响的：状态压缩的，一些特殊的性质</p>
+<p>2.确定转移方程：<br>1）检查参数是否足够；<br>2）分情况：最后一次操作的方式，取不取，怎么样放，前一项是什么<br>3）初始边界是什么。<br>4）注意无后效性。比如说，求A就要求Ｂ，求Ｂ就要求Ｃ，而求Ｃ就要求Ａ，这就不符合无后效性了。<br><strong>技巧：</strong>根据状态枚举最后一次决策（即当前状态怎么来的）就可确定出状态转移方程！</p>
+<p>3.确定编程实现方式<br>1）递推<br>2）记忆化搜索<br>凡是可以递推的均可以用记忆化搜索，<br>但是有的问题却只能用记忆化搜索解决！<br>例5:滑雪（poj1088）<br>Michael喜欢滑雪，这并不奇怪， 因为滑雪的确很刺激。可是为了获得速度，滑的区域必须向下倾斜，而且当你滑到坡底，你不得不再次走上坡或者等待升降机来载你。Michael想知道载一个区域中最长底滑坡。区域由一个二维数组给出。数组的每个数字代表点的高度。下面是一个例子<br>1　2　3　4　5<br>16 17 18 19　6<br>15 24 25 20　7<br>14 23 22 21　8<br>13 12 11 10　9<br>一个人可以从某个点滑向上下左右相邻四个点之一，当且仅当高度减小。在上面的例子中，一条可滑行的滑坡为24-17-16-1。当然25-24-23-…-3-2-1更长。事实上，这是最长的一条。 　<br>第一步：确定状态<br>f[i][j]表示从（i，j）滑下的最长路径长度<br>第二步：确定状态转移方程<br>——由于f[i][j]由上下左右四个方向转移过来<br>F[i][j] = max {f[i - 1][j] + 1(a[i - 1][j] &lt;a[i][j])<br>　　　　　{f[i + 1][j] + 1(a[i + 1][j] &lt;a[i][j])<br>　　　　　{f[i][j - 1] + 1 (a[i][j - 1] &lt;a[i][j])<br>　　　　　{f[i][j + 1] + 1(a[i][j + 1] &lt;a[i][j])<br>（初值）：f[i][j] = 0<br>第三步：确定实现方法<br>相信同学们已经看出问题了，我们没法通过递推的方式在算f[i][j]之前将他上下左右四个点的值都求出来。<br>所以记忆化搜索就成为解决这个问题的唯一办法！</p>
+<pre><code>/* ***********************************************
+Author:guanjun
+Created Time  :2016/2/11 10:29:33
+File Name :1.cpp
+************************************************ */
+#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+int dp[110][110];
+int a[110][110];
+int n,m;
+int dfs(int x,int y){
+    if(dp[x][y]!=-1)return dp[x][y];
+    dp[x][y]=1;
+    if((a[x-1][y]&lt;a[x][y])&amp;&amp;(x&gt;1))dp[x][y]=max(dp[x][y],dfs(x-1,y)+1);
+    if((a[x+1][y]&lt;a[x][y])&amp;&amp;(x&lt;n))dp[x][y]=max(dp[x][y],dfs(x+1,y)+1);
+    if((a[x][y-1]&lt;a[x][y])&amp;&amp;(y&gt;1))dp[x][y]=max(dp[x][y],dfs(x,y-1)+1);
+    if((a[x][y+1]&lt;a[x][y])&amp;&amp;(y&lt;n))dp[x][y]=max(dp[x][y],dfs(x,y+1)+1);
+    return dp[x][y];
+}
+int main()
+{
+    while(cin&gt;&gt;n&gt;&gt;m){
+        memset(dp,-1,sizeof dp);
+        for(int i=1;i&lt;=n;i++){
+            for(int j=1;j&lt;=m;j++)
+                cin&gt;&gt;a[i][j];
+        }
+        int Max=-1;
+        for(int i=1;i&lt;=n;i++)
+            for(int j=1;j&lt;=m;j++){
+                Max=max(Max,dfs(i,j));
+            }
+        cout&lt;&lt;Max&lt;&lt;endl;
+    }
+return 0;
+}
+</code></pre><p>例6：最长公共子序列<br>一个给定序列的子序列是在该序列中删去若干元素后得到的序列。<br>给定两个序列X和Y，当另一序列Z既是X的子序列又是Y的子序列时，称Z是序列X和Y的公共子序列。<br>最长公共子序列:公共子序列中长度最长的子序列。<br>给定两个序列X={x1,x2,…,xm}和Y={y1,y2,…, yn}，找出X和Y的一个最长公共子序列。<br>样例输入:<br>abcfbc<br>abfcab<br>样例输出：4<br>第一步：确定状态<br>f[i][j]表示前一个字符串的前i位与后一个字符串的前j位的最长公共子序列长度<br>第二步：确定状态转移方程<br>当x[i]==y[j]，长度为i的子序列和长度为j的子序列的最长公共子序列就是长度为i-1和长度为j-1 的子序列中最长的公共子序列加上1<br>即：f[i][j]=f[i-1][j-1]+1<br>当x[i]!=x[j]，第一个序列长度为i的子序列和第二个序列中长度为j的子序列的公共子序列中x[i]和y[j]不同时出现。<br>也就是说在x[0]~x[i]和y[0]~y[i]的最长公共子序列实际上与x[0]~x[i-1]和 y[0]~y[i]的最长公共子序列一样或者与x[0]~x[i]和 y[0]~y[i-1]的最长公共子序列一样<br>即：f[i][j]=max(f[i - 1][j] ,f[i][j - 1])<br>第三步：确定程序实现方式<br>递推或记忆化搜索均可<br>f[i][j]=f[i-1][j-1]+1<br>f[i][j]=max(f[i - 1][j] ,f[i][j - 1])</p>
+<p>以上例题均属于线性dp讨论范畴<br>2/11/2016 12:14:34 PM<br>参考nwpu课件复习。</p>
 
       
       
@@ -331,13 +447,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/08/01/hello-world/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/2017/08/01/动态规划基础(复习)/"></a></p>
         <p><span>文章作者:</span><a href="/" title="访问 guanjun 的个人博客">guanjun</a></p>
-        <p><span>发布时间:</span>2017年08月01日 - 10时50分</p>
-        <p><span>最后更新:</span>2017年08月01日 - 10时50分</p>
+        <p><span>发布时间:</span>2017年08月01日 - 12时44分</p>
+        <p><span>最后更新:</span>2017年08月01日 - 09时35分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/08/01/hello-world/" title="Hello World">http://yoursite.com/2017/08/01/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/08/01/hello-world/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/08/01/动态规划基础(复习)/" title="">http://yoursite.com/2017/08/01/动态规划基础(复习)/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/08/01/动态规划基础(复习)/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -350,15 +466,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/08/01/如何高效地学习/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
+    <a href="/2017/08/01/数独验证/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -367,7 +479,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -433,13 +545,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/08/01/如何高效地学习/" title="上一篇: ">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/08/01/数独验证/" title="下一篇: ">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/01/动态规划基础(复习)/">动态规划基础(复习)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/01/数独验证/">数独验证</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/01/我的大学(2015上)/">我的大学(2015上)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/01/人不聪明怎么办？/">人不聪明怎么办？</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/01/状压DP/">状压DP</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/01/如何高效地学习/">如何高效地学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/01/hello-world/">Hello World</a></li></ul>
