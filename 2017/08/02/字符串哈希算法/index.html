@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>数独验证 | guanjun&#39;s blog</title>
+  <title>字符串哈希算法 | guanjun&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天做到了一个题目，判断数独验证。想起来以前写过的一个填数独的题目。http://poj.org/problem?id=2676验证数独的题目：https://vijos.org/p/1335是上面的填数独的简化。这里有一个比较好的方法。在判断3X3的小方块中是否满足要求时，我们可以把他转换成用sq[i][a]判断第i个小方块是否有a。 这样能简化判断步骤。具体见代码。">
-<meta name="keywords" content="array">
+  <meta name="description" content="前几天在做leetcode题目的时候，有个来是类似字符串匹配的题目，当时想到了kmp但是这么久没写kmp了已经不会求next数组了（唉～多半是我掌握的不好，所以才想不起来怎么写的）。还好我们有字符串哈希算法，处理字符串匹配的问题同样能达到O(n+m)的时间复杂度。">
+<meta name="keywords" content="字符串">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数独验证">
-<meta property="og:url" content="http://ngunauj.github.io/2016/02/19/5.数独验证/index.html">
+<meta property="og:title" content="字符串哈希算法">
+<meta property="og:url" content="http://ngunauj.github.io/2017/08/02/字符串哈希算法/index.html">
 <meta property="og:site_name" content="guanjun&#39;s blog">
-<meta property="og:description" content="今天做到了一个题目，判断数独验证。想起来以前写过的一个填数独的题目。http://poj.org/problem?id=2676验证数独的题目：https://vijos.org/p/1335是上面的填数独的简化。这里有一个比较好的方法。在判断3X3的小方块中是否满足要求时，我们可以把他转换成用sq[i][a]判断第i个小方块是否有a。 这样能简化判断步骤。具体见代码。">
+<meta property="og:description" content="前几天在做leetcode题目的时候，有个来是类似字符串匹配的题目，当时想到了kmp但是这么久没写kmp了已经不会求next数组了（唉～多半是我掌握的不好，所以才想不起来怎么写的）。还好我们有字符串哈希算法，处理字符串匹配的问题同样能达到O(n+m)的时间复杂度。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-01T09:35:06.641Z">
+<meta property="og:updated_time" content="2017-08-03T02:30:50.098Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数独验证">
-<meta name="twitter:description" content="今天做到了一个题目，判断数独验证。想起来以前写过的一个填数独的题目。http://poj.org/problem?id=2676验证数独的题目：https://vijos.org/p/1335是上面的填数独的简化。这里有一个比较好的方法。在判断3X3的小方块中是否满足要求时，我们可以把他转换成用sq[i][a]判断第i个小方块是否有a。 这样能简化判断步骤。具体见代码。">
+<meta name="twitter:title" content="字符串哈希算法">
+<meta name="twitter:description" content="前几天在做leetcode题目的时候，有个来是类似字符串匹配的题目，当时想到了kmp但是这么久没写kmp了已经不会求next数组了（唉～多半是我掌握的不好，所以才想不起来怎么写的）。还好我们有字符串哈希算法，处理字符串匹配的问题同样能达到O(n+m)的时间复杂度。">
   
     <link rel="alternative" href="/atom.xml" title="guanjun&#39;s blog" type="application/atom+xml">
   
@@ -214,11 +214,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-5.数独验证" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-字符串哈希算法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/19/5.数独验证/" class="article-date">
-      <time datetime="2016-02-19T10:38:23.000Z" itemprop="datePublished">2016-02-19</time>
+      <a href="/2017/08/02/字符串哈希算法/" class="article-date">
+      <time datetime="2017-08-02T07:21:14.000Z" itemprop="datePublished">2017-08-02</time>
 </a>
     </div>
   
@@ -231,7 +231,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      数独验证
+      字符串哈希算法
     </h1>
   
 
@@ -240,13 +240,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Math/">Math</a>
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/array/">array</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字符串/">字符串</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -292,7 +292,11 @@
 	    
 
        原文地址:https://ngunauj.github.io
-        <p>今天做到了一个题目，判断数独验证。想起来以前写过的一个填数独的题目。<a href="http://poj.org/problem?id=2676" target="_blank" rel="external">http://poj.org/problem?id=2676</a><br>验证数独的题目：<a href="https://vijos.org/p/1335" target="_blank" rel="external">https://vijos.org/p/1335</a><br>是上面的填数独的简化。这里有一个比较好的方法。在判断3X3的小方块中是否满足要求时，我们可以把他转换成用sq[i][a]判断第i个小方块是否有a。 这样能简化判断步骤。<br>具体见代码。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">/* ***********************************************</div><div class="line">Author:guanjun</div><div class="line">Created Time  :2016/2/18 21:37:42</div><div class="line">File Name :vijosp1335.cpp</div><div class="line">************************************************ */</div><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">#include &lt;cstdlib&gt;</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">#include &lt;vector&gt;</div><div class="line">#include &lt;queue&gt;</div><div class="line">#include &lt;set&gt;</div><div class="line">#include &lt;map&gt;</div><div class="line">#include &lt;string&gt;</div><div class="line">#include &lt;math.h&gt;</div><div class="line">#include &lt;stdlib.h&gt;</div><div class="line">#include &lt;iomanip&gt;</div><div class="line">#include &lt;list&gt;</div><div class="line">#include &lt;deque&gt;</div><div class="line">#include &lt;stack&gt;</div><div class="line">#define ull unsigned long long</div><div class="line">#define ll long long</div><div class="line">#define mod 90001</div><div class="line">#define INF 0x3f3f3f3f</div><div class="line">#define maxn 10000+10</div><div class="line">#define cle(a) memset(a,0,sizeof(a))</div><div class="line">const ull inf = 1LL &lt;&lt; 61;</div><div class="line">const double eps=1e-5;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">bool cmp(int a,int b)&#123;</div><div class="line">return a&gt;b;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">#ifndef ONLINE_JUDGE</div><div class="line">//freopen(&quot;in.txt&quot;,&quot;r&quot;,stdin);</div><div class="line">#endif</div><div class="line">//freopen(&quot;out.txt&quot;,&quot;w&quot;,stdout);</div><div class="line">    int row[10][10],col[10][10],sq[10][10];</div><div class="line">    int t,a;</div><div class="line">    cin&gt;&gt;t;</div><div class="line">    while(t--)&#123;</div><div class="line">        cle(row),cle(col);cle(sq);</div><div class="line">        for(int  i=1;i&lt;=9;i++)&#123;</div><div class="line">            for(int j=1;j&lt;=9;j++)&#123;</div><div class="line">                cin&gt;&gt;a;</div><div class="line">                row[i][a]=1;</div><div class="line">                col[j][a]=1;</div><div class="line">                int x=(i-1)/3*3+(j-1)/3;//重点</div><div class="line">                sq[x][a]=1;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        int mark=0;</div><div class="line">        for(int i=1;i&lt;=9;i++)&#123;</div><div class="line">            for(int j=1;j&lt;=9;j++)&#123;</div><div class="line">                if(col[j][i]==0||row[i][j]==0||!sq[i-1][j])&#123;mark=1;break;&#125;</div><div class="line">            &#125;</div><div class="line">            if(mark)break;</div><div class="line">        &#125;</div><div class="line">        if(mark)puts(&quot;Wrong&quot;);</div><div class="line">        else puts(&quot;Right&quot;);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>前几天在做leetcode题目的时候，有个来是类似字符串匹配的题目，当时想到了kmp但是这么久没写kmp了已经不会求next数组了（唉～多半是我掌握的不好，所以才想不起来怎么写的）。还好我们有字符串哈希算法，处理字符串匹配的问题同样能达到O(n+m)的时间复杂度。<br><a id="more"></a></p>
+<p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>算法思想：假设原串a的长度n,要查找的串b的长度m,朴素的算法是遍历a的同时移动m个字符进行比较，总体的时间复杂度O（n*m）,但是当我们遍历S(取S中m个求哈希值)的同时可以用O(1)的得到T串的哈希值。时间复杂度就是O(n+m)。接下来就是如何进行哈希了。<br>选取两个合适的互素常数b和h(n&lt;b&lt;h),假设字符串\(C=c_1c_2…c_m\),定义哈希函数：<br>$$H(C)=(c_1b^{m-1}+c_2b^{m-2}+c_3b^{m-3}+…c_mb^{0})mod\ {h}$$<br>其中b是基数，相当于把字符串看成b进制数。这样，字符串\(S=s_1s_2…s_n\)从位置k+1开始长度为m的字符串子串S[k+1,k+m]的哈希值，就可以利用从位置k开始的字符串子串S[k..k+m-1]的哈希值，直接进行如下计算。</p>
+<p>$$H(S[k+1..k+m])=(H(S[k..k+m-1])×b-s_kb^m+s_{m+k})mod\ {h}$$<br>于是，只要不断这样计算开始位置右移一位后的字符串子串的哈细致，就可以在O(n)时间内得到所有位置对应的哈希值。在写代码时，可以用用64位无符号整数计算哈希值，通过自然溢出省去求模运算。\(h=2^{64}\)<br>这种利用滚动哈希的字符串匹配算法叫Rabin-Karp算法。不过，原来的Rabin-Karp算法在哈希值相等的时，还要用传统的字符串比较算法判断字符串是否相等。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">typedef unsigned long long ull;</div><div class="line">const ull B = 100000007;</div><div class="line">//a是否在b中出现</div><div class="line">bool contain(string a, string b) &#123;</div><div class="line">    int al = a.length(), bl = b.length();</div><div class="line">    if (al &gt; bl) return false;</div><div class="line">    //计算B的al次方</div><div class="line">    ull t = 1;</div><div class="line">    for (int i = 0; i &lt; al; ++i) t *= B;</div><div class="line">    //计算a和b长度为al的前缀对应的哈希值 初始化</div><div class="line">    for (int i = 0; i &lt; al; ++i) ah = ah * B + a[i];</div><div class="line">    for (int i = 0; i &lt; al; ++i) bh = bh * B + b[i];</div><div class="line">    //对b不断右移一位，更新哈希值并判断</div><div class="line">    for (int i = 0; i + al &lt;= bl; ++i) &#123;</div><div class="line">        if (ah == bh) return true;</div><div class="line">        if (i + a &lt; bl) bh = bh * B + b[i + al] - b[i]*t;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然，不光右移一位，对于左移一位、左端或右端加长一位或是缩短一位的情况，也能进行类似的处理。例如，假设要求S的后缀和T的前缀相等的最大长度，也可以利用滚动哈希在O(m+n)的时间内高效求得。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">typedef unsigned long long ull;</div><div class="line">const ull B = 100000007;</div><div class="line">//a的后缀和b的前缀相等的最大长度</div><div class="line">int overlap(string a, string b) &#123;</div><div class="line">    int al = a.length(), bl = b.length();</div><div class="line">    int ans = 0;</div><div class="line">    ull ah = 0, bh = 0, t = 1;</div><div class="line">    for (int i = 1; i &lt;= min(al, bl); ++i) &#123;</div><div class="line">        ah = ah + a[al - i] * t;</div><div class="line">        bh = bh * B + b[i - 1];</div><div class="line">        if (ah == bh) ans = i;</div><div class="line">        t *= B;</div><div class="line">    &#125;</div><div class="line">    return ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>kmp也可以完美的解决这个问题。</p>
 
       
       
@@ -348,13 +352,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/19/5.数独验证/">数独验证</a></p>
+        <p><span>本文标题:</span><a href="/2017/08/02/字符串哈希算法/">字符串哈希算法</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 guanjun 的个人博客">guanjun</a></p>
-        <p><span>发布时间:</span>2016年02月19日 - 18时38分</p>
-        <p><span>最后更新:</span>2017年08月01日 - 17时35分</p>
+        <p><span>发布时间:</span>2017年08月02日 - 15时21分</p>
+        <p><span>最后更新:</span>2017年08月03日 - 10时30分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/19/5.数独验证/" title="数独验证">http://ngunauj.github.io/2016/02/19/5.数独验证/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://ngunauj.github.io/2016/02/19/5.数独验证/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/08/02/字符串哈希算法/" title="字符串哈希算法">http://ngunauj.github.io/2017/08/02/字符串哈希算法/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://ngunauj.github.io/2017/08/02/字符串哈希算法/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -367,18 +371,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/02/23/4.状压DP/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          状压DP
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/02/12/3.如何高效地学习/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何高效地学习</div>
+    <a href="/2016/02/23/4.状压DP/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">状压DP</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -456,13 +451,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/23/4.状压DP/" title="上一篇: 状压DP">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/02/12/3.如何高效地学习/" title="下一篇: 如何高效地学习">
+            <a href="/2016/02/23/4.状压DP/" title="下一篇: 状压DP">
                 <i class="fa fa-angle-right"></i>
             </a>
         
