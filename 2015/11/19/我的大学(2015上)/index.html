@@ -3,20 +3,46 @@
 <head>
   <meta charset="utf-8">
   
-  <title>数独验证 | guanjun&#39;s blog</title>
+  <title>我的大学(2015上) | guanjun&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天做到了一个题目，判断数独验证。想起来以前写过的一个填数独的题目。http://poj.org/problem?id=2676验证数独的题目：https://vijos.org/p/1335是上面的填数独的简化。这里有一个比较好的方法。在判断3X3的小方块中是否满足要求时，我们可以把他转换成用sq[i][a]判断第i个小方块是否有a。 这样能简化判断步骤。具体见代码。">
-<meta name="keywords" content="array">
+  <meta name="description" content="大学这几年没有刻意的出去旅游..这里都是一些参加程序设计竞赛的记录 留给未来的自己看东北四省赛哈尔滨站时候的图片，像素很渣。">
+<meta name="keywords" content="Think">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数独验证">
-<meta property="og:url" content="http://ngunauj.github.io/2016/02/19/5.数独验证/index.html">
+<meta property="og:title" content="我的大学(2015上)">
+<meta property="og:url" content="http://ngunauj.github.io/2015/11/19/我的大学(2015上)/index.html">
 <meta property="og:site_name" content="guanjun&#39;s blog">
-<meta property="og:description" content="今天做到了一个题目，判断数独验证。想起来以前写过的一个填数独的题目。http://poj.org/problem?id=2676验证数独的题目：https://vijos.org/p/1335是上面的填数独的简化。这里有一个比较好的方法。在判断3X3的小方块中是否满足要求时，我们可以把他转换成用sq[i][a]判断第i个小方块是否有a。 这样能简化判断步骤。具体见代码。">
+<meta property="og:description" content="大学这几年没有刻意的出去旅游..这里都是一些参加程序设计竞赛的记录 留给未来的自己看东北四省赛哈尔滨站时候的图片，像素很渣。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-08-01T09:35:06.641Z">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193741/84370c8c-67b7-11e5-9962-04193ab4aa10.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193740/8434c454-67b7-11e5-8baf-10dffc7edc1b.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193742/84387cde-67b7-11e5-8eaf-f3695f5be9f8.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193743/8439537a-67b7-11e5-93d9-5808dd96c03e.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193744/843bf396-67b7-11e5-96a2-7014372f6e8e.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193745/843f322c-67b7-11e5-9119-d7b5eaf9b61a.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193746/848272a8-67b7-11e5-9d4a-b886e70d4df1.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193749/8489d02a-67b7-11e5-8848-5a09fc02e94c.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193747/8489189c-67b7-11e5-8da2-14b18f86a30a.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193748/84897670-67b7-11e5-84a8-74e784570517.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193750/848f4cee-67b7-11e5-8b35-d2756f33076e.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193751/8492bc6c-67b7-11e5-98a0-0e2fcccb888c.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193752/84d36de8-67b7-11e5-86d6-6b72ffd2319f.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193753/84d6012a-67b7-11e5-8cf7-76562ee08e31.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193754/84d86802-67b7-11e5-800c-d483ef3d6c06.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193755/84da55cc-67b7-11e5-8388-366abfed2de2.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193760/85271290-67b7-11e5-88f7-2e5238c9ccec.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193756/84dfecc6-67b7-11e5-9ee1-56da4b70ae34.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193757/84e7bad2-67b7-11e5-8a89-a6df87bdcfda.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193761/8529df0c-67b7-11e5-95d6-47bf2074c778.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193762/852f14a4-67b7-11e5-9492-cfc040c1fa6e.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193763/85380d34-67b7-11e5-9ba4-9947599c5fff.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193764/857248a0-67b7-11e5-83bf-5ec21659c5de.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193759/8523fff6-67b7-11e5-976b-dda61863a733.jpg">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193758/852364d8-67b7-11e5-9c69-605ac4636a36.jpg">
+<meta property="og:updated_time" content="2017-08-07T11:48:56.509Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数独验证">
-<meta name="twitter:description" content="今天做到了一个题目，判断数独验证。想起来以前写过的一个填数独的题目。http://poj.org/problem?id=2676验证数独的题目：https://vijos.org/p/1335是上面的填数独的简化。这里有一个比较好的方法。在判断3X3的小方块中是否满足要求时，我们可以把他转换成用sq[i][a]判断第i个小方块是否有a。 这样能简化判断步骤。具体见代码。">
+<meta name="twitter:title" content="我的大学(2015上)">
+<meta name="twitter:description" content="大学这几年没有刻意的出去旅游..这里都是一些参加程序设计竞赛的记录 留给未来的自己看东北四省赛哈尔滨站时候的图片，像素很渣。">
+<meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/13215594/10193741/84370c8c-67b7-11e5-9962-04193ab4aa10.jpg">
   
     <link rel="alternative" href="/atom.xml" title="guanjun&#39;s blog" type="application/atom+xml">
   
@@ -214,11 +240,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-5.数独验证" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-我的大学(2015上)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/19/5.数独验证/" class="article-date">
-      <time datetime="2016-02-19T10:38:23.000Z" itemprop="datePublished">2016-02-19</time>
+      <a href="/2015/11/19/我的大学(2015上)/" class="article-date">
+      <time datetime="2015-11-19T12:18:21.000Z" itemprop="datePublished">2015-11-19</time>
 </a>
     </div>
   
@@ -231,7 +257,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      数独验证
+      我的大学(2015上)
     </h1>
   
 
@@ -240,13 +266,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Math/">Math</a>
+    <a class="article-category-link" href="/categories/Think/">Think</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/array/">array</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Think/">Think</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -292,7 +318,7 @@
 	    
 
        原文地址:https://ngunauj.github.io
-        <p>今天做到了一个题目，判断数独验证。想起来以前写过的一个填数独的题目。<a href="http://poj.org/problem?id=2676" target="_blank" rel="external">http://poj.org/problem?id=2676</a><br>验证数独的题目：<a href="https://vijos.org/p/1335" target="_blank" rel="external">https://vijos.org/p/1335</a><br>是上面的填数独的简化。这里有一个比较好的方法。在判断3X3的小方块中是否满足要求时，我们可以把他转换成用sq[i][a]判断第i个小方块是否有a。 这样能简化判断步骤。<br>具体见代码。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">/* ***********************************************</div><div class="line">Author:guanjun</div><div class="line">Created Time  :2016/2/18 21:37:42</div><div class="line">File Name :vijosp1335.cpp</div><div class="line">************************************************ */</div><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">#include &lt;cstdlib&gt;</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;algorithm&gt;</div><div class="line">#include &lt;vector&gt;</div><div class="line">#include &lt;queue&gt;</div><div class="line">#include &lt;set&gt;</div><div class="line">#include &lt;map&gt;</div><div class="line">#include &lt;string&gt;</div><div class="line">#include &lt;math.h&gt;</div><div class="line">#include &lt;stdlib.h&gt;</div><div class="line">#include &lt;iomanip&gt;</div><div class="line">#include &lt;list&gt;</div><div class="line">#include &lt;deque&gt;</div><div class="line">#include &lt;stack&gt;</div><div class="line">#define ull unsigned long long</div><div class="line">#define ll long long</div><div class="line">#define mod 90001</div><div class="line">#define INF 0x3f3f3f3f</div><div class="line">#define maxn 10000+10</div><div class="line">#define cle(a) memset(a,0,sizeof(a))</div><div class="line">const ull inf = 1LL &lt;&lt; 61;</div><div class="line">const double eps=1e-5;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">bool cmp(int a,int b)&#123;</div><div class="line">return a&gt;b;</div><div class="line">&#125;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">#ifndef ONLINE_JUDGE</div><div class="line">//freopen(&quot;in.txt&quot;,&quot;r&quot;,stdin);</div><div class="line">#endif</div><div class="line">//freopen(&quot;out.txt&quot;,&quot;w&quot;,stdout);</div><div class="line">    int row[10][10],col[10][10],sq[10][10];</div><div class="line">    int t,a;</div><div class="line">    cin&gt;&gt;t;</div><div class="line">    while(t--)&#123;</div><div class="line">        cle(row),cle(col);cle(sq);</div><div class="line">        for(int  i=1;i&lt;=9;i++)&#123;</div><div class="line">            for(int j=1;j&lt;=9;j++)&#123;</div><div class="line">                cin&gt;&gt;a;</div><div class="line">                row[i][a]=1;</div><div class="line">                col[j][a]=1;</div><div class="line">                int x=(i-1)/3*3+(j-1)/3;//重点</div><div class="line">                sq[x][a]=1;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        int mark=0;</div><div class="line">        for(int i=1;i&lt;=9;i++)&#123;</div><div class="line">            for(int j=1;j&lt;=9;j++)&#123;</div><div class="line">                if(col[j][i]==0||row[i][j]==0||!sq[i-1][j])&#123;mark=1;break;&#125;</div><div class="line">            &#125;</div><div class="line">            if(mark)break;</div><div class="line">        &#125;</div><div class="line">        if(mark)puts(&quot;Wrong&quot;);</div><div class="line">        else puts(&quot;Right&quot;);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>大学这几年没有刻意的出去旅游..这里都是一些参加程序设计竞赛的记录 留给未来的自己看<br>东北四省赛哈尔滨站时候的图片，像素很渣。<br><a id="more"></a><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193741/84370c8c-67b7-11e5-9962-04193ab4aa10.jpg" alt="20150515_171218">.<br><img src="https://cloud.githubusercontent.com/assets/13215594/10193740/8434c454-67b7-11e5-8baf-10dffc7edc1b.jpg" alt="20150515_171451"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193742/84387cde-67b7-11e5-8eaf-f3695f5be9f8.jpg" alt="20150515_173459"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193743/8439537a-67b7-11e5-93d9-5808dd96c03e.jpg" alt="20150515_175042"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193744/843bf396-67b7-11e5-96a2-7014372f6e8e.jpg" alt="20150515_175113"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193745/843f322c-67b7-11e5-9119-d7b5eaf9b61a.jpg" alt="20150515_175212"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193746/848272a8-67b7-11e5-9d4a-b886e70d4df1.jpg" alt="20150515_181238"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193749/8489d02a-67b7-11e5-8848-5a09fc02e94c.jpg" alt="20150515_181304"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193747/8489189c-67b7-11e5-8da2-14b18f86a30a.jpg" alt="20150515_181350"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193748/84897670-67b7-11e5-84a8-74e784570517.jpg" alt="20150515_181541"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193750/848f4cee-67b7-11e5-8b35-d2756f33076e.jpg" alt="20150515_181550"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193751/8492bc6c-67b7-11e5-98a0-0e2fcccb888c.jpg" alt="20150515_181607"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193752/84d36de8-67b7-11e5-86d6-6b72ffd2319f.jpg" alt="20150515_181635"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193753/84d6012a-67b7-11e5-8cf7-76562ee08e31.jpg" alt="20150515_181721"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193754/84d86802-67b7-11e5-800c-d483ef3d6c06.jpg" alt="20150515_181729"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193755/84da55cc-67b7-11e5-8388-366abfed2de2.jpg" alt="20150515_201914"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193760/85271290-67b7-11e5-88f7-2e5238c9ccec.jpg" alt="img20150517203554"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193756/84dfecc6-67b7-11e5-9ee1-56da4b70ae34.jpg" alt="20150517_164130"><br>这是在大连2015东北四省赛暨全国邀请赛<br><img src="https://cloud.githubusercontent.com/assets/13215594/10193757/84e7bad2-67b7-11e5-8a89-a6df87bdcfda.jpg" alt="20150607_153054"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193761/8529df0c-67b7-11e5-95d6-47bf2074c778.jpg" alt="img20150606195746"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193762/852f14a4-67b7-11e5-9492-cfc040c1fa6e.jpg" alt="img20150607152318"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193763/85380d34-67b7-11e5-9ba4-9947599c5fff.jpg" alt="img20150607195527"><br>这是在北京王府井  codecup<br><img src="https://cloud.githubusercontent.com/assets/13215594/10193764/857248a0-67b7-11e5-83bf-5ec21659c5de.jpg" alt="img20150910162657"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193759/8523fff6-67b7-11e5-976b-dda61863a733.jpg" alt="20150910_140446"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193758/852364d8-67b7-11e5-9c69-605ac4636a36.jpg" alt="20150910_140453"><br>2015年的东北四省赛举办了两场，ccpc和icpc  </p>
 
       
       
@@ -348,13 +374,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/19/5.数独验证/">数独验证</a></p>
+        <p><span>本文标题:</span><a href="/2015/11/19/我的大学(2015上)/">我的大学(2015上)</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 guanjun 的个人博客">guanjun</a></p>
-        <p><span>发布时间:</span>2016年02月19日 - 18时38分</p>
-        <p><span>最后更新:</span>2017年08月01日 - 17时35分</p>
+        <p><span>发布时间:</span>2015年11月19日 - 20时18分</p>
+        <p><span>最后更新:</span>2017年08月07日 - 19时48分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/19/5.数独验证/" title="数独验证">http://ngunauj.github.io/2016/02/19/5.数独验证/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://ngunauj.github.io/2016/02/19/5.数独验证/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2015/11/19/我的大学(2015上)/" title="我的大学(2015上)">http://ngunauj.github.io/2015/11/19/我的大学(2015上)/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://ngunauj.github.io/2015/11/19/我的大学(2015上)/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -367,18 +393,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/02/23/4.状压DP/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/01/11/1.人不聪明怎么办？/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          状压DP
+          人不聪明怎么办？
         
       </div>
     </a>
   
   
-    <a href="/2016/02/12/3.如何高效地学习/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何高效地学习</div>
+    <a href="/2015/08/21/Markdown的基本语法 /" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Markdown的基本语法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -456,13 +482,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/23/4.状压DP/" title="上一篇: 状压DP">
+            <a href="/2016/01/11/1.人不聪明怎么办？/" title="上一篇: 人不聪明怎么办？">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/02/12/3.如何高效地学习/" title="下一篇: 如何高效地学习">
+            <a href="/2015/08/21/Markdown的基本语法 /" title="下一篇: Markdown的基本语法">
                 <i class="fa fa-angle-right"></i>
             </a>
         
