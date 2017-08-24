@@ -22,7 +22,8 @@
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fiq5g0wy38j207d05cglk.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq5g7nw0ej20k50e4aba.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq6bpjasij20ln07v74g.jpg">
-<meta property="og:updated_time" content="2017-08-20T06:38:38.792Z">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fiq5gbu04yj20s106eq3r.jpg">
+<meta property="og:updated_time" content="2017-08-23T09:29:42.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="梯度下降法">
 <meta name="twitter:description" content="最近在学NG的机器学习课程，发现前几周的课程和前面的写的最小二乘法曲线拟合有那么神似。最小二乘法中的拟合模型就是线性(非线性)回归中假设函数h。残差的平方和就是线性回归中的损失函数。最小二乘法与梯度下降法都用来求损失函数(残差的平方和)的最小值的。那么他们之间有什么区别呢？">
@@ -152,7 +153,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/Think/" style="font-size: 20px;">Think</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/dp/" style="font-size: 15px;">dp</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/拟合/" style="font-size: 10px;">拟合</a> <a href="/tags/梯度下降/" style="font-size: 10px;">梯度下降</a>
+                        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/Think/" style="font-size: 20px;">Think</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/dp/" style="font-size: 15px;">dp</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/拟合/" style="font-size: 10px;">拟合</a> <a href="/tags/梯度下降/" style="font-size: 10px;">梯度下降</a> <a href="/tags/逻辑回归/" style="font-size: 10px;">逻辑回归</a>
                     </div>
                 </section>
                 
@@ -305,7 +306,7 @@
         <p>最近在学NG的机器学习课程，发现前几周的课程和前面的写的最小二乘法曲线拟合有那么神似。<br>最小二乘法中的拟合模型就是线性(非线性)回归中假设函数h。残差的平方和就是线性回归中的损失函数。最小二乘法与梯度下降法都用来求损失函数(残差的平方和)的最小值的。那么他们之间有什么区别呢？<br><a id="more"></a></p>
 <p><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>这里是知乎里面的回答<a href="https://www.zhihu.com/question/20822481" target="_blank" rel="external">二者区别</a>。  </p>
 <p>在机器学习中求解线性回归问题一般用Gradient Descent与Normal Equation两种方法。Normal Equation方法也是前面最小二乘法伪逆矩阵×Y得到参数向量的方法。梯度下降有如下特点：<br>(1)需要预先选定Learning rate；<br>(2)需要多次iteration；<br>(3)需要Feature Scaling；<br>Normal Equation方法是适用于特征数量比较小的情况。<br>当Feature数量小于100000时使用Normal Equation；<br>当Feature数量大于100000时使用Gradient Descent；<br>以上来自NG课程。其实Normal Equation方法主要在求矩阵的逆时最耗时间。Normal Equation公式\(\theta=(X^TX)^{-1}X^Ty\)<br>为了方便理解梯度下降，根据课程先从线性回归来说起。<br><strong>Linear Regression</strong><br>方法：线性回归属于监督学习，因此方法和监督学习应该是一样的，先给定一个训练集，根据这个训练集学习出一个线性函数，然后测试这个函数训练的好不好（即此函数是否足够拟合训练集数据），挑选出最好的函数（cost function最小）即可；<br>注意：<br>(1)因为是线性回归，所以学习到的函数为线性函数，即直线函数；<br>(2)因为是单变量，因此只有一个x；<br>我们能够给出单变量线性回归的模型：<br>$$h_0(x)=\theta_0+\theta_1x$$我们常称x为feature，h(x)为hypothesis；从上面“方法”中，我们肯定有一个疑问，怎么样能够看出线性函数拟合的好不好呢？<br>我们需要使用到Cost Function（代价函数），代价函数越小，说明线性回归地越好（和训练集拟合地越好），当然最小就是0，即完全拟合；<br>下图详细说明了当cost function为黑盒的时候，cost function 的作用；<br><img src="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fiq4sa3rfaj20k809wmxi.jpg" alt="1"><br>cost Function的内部构造:$$J(\theta_0,\theta_1)=\frac{1}{2m}\sum _{i=1}^m(h_0(x^{(i)})-y^{(i)})^2$$<br>\(x^{(i)}\)表示第i个向量(样本)，\(y^{(i)}\)表示y向量的第i个元素。m为训练集的数量。<br>如果\(\theta_0\)一直为0那么\(\theta_1\)与J的函数图像：<br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq54ehtdnj20bc08h3yh.jpg" alt="2"><br>如果有\(\theta_0\)与\(\theta_1\)都不固定，则\(\theta_0\)、\(\theta_1\)、J 的函数为：<br><img src="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fiq54mqflhj20if0eggp7.jpg" alt="3"><br>当然我们也能够用二维的图来表示，即等高线图；<br><img src="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fiq54v39sxj20mk09mabv.jpg" alt="4"><br>我们能够根据cost function知道这个函数拟合的好不好，但是毕竟函数有这么多，总不可能一个一个试吧？因此我们引出了梯度下降：能够找出cost function函数的最小值；<strong>梯度下降原理：将函数比作一座山，我们站在某个山坡上，往四周看，从哪个方向向下走一小步，能够下降的最快；</strong>当然解决问题的方法有很多，梯度下降只是其中一个。<br>(1)先确定向下一步的步伐大小，我们称为Learning rate；<br>(2)任意给定一个初始值\(\theta_0\)，\(\theta_1\)；<br>(3)确定一个向下的方向，并向下走预先规定的步伐，并更新；<br>(4)当下降的高度小于某个定义的值，则停止下降；<br>算法：<img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq5fnb6cej20g909tjs8.jpg" alt="5"><br>特点：<br>(1)初始点不同，获得的最小值也不同，因此梯度下降求得的只是局部最小值；<br>(2)越接近最小值时，下降速度越慢；<br>问题：如果初始值就在local minimum的位置，则\(\theta_0\)，\(\theta_1\)会如何变化？<br>答：因为\(\theta_0\)，\(\theta_1\)已经在local minimum位置，所以derivative 肯定是0，因此\(\theta_0\)，\(\theta_1\)不会变化；  </p>
-<p>如果取到一个正确的\(\alpha\)值，则cost function应该越来越小；<br>问题：怎么取\(\alpha\)值？<br>答：随时观察\(\alpha\)值，如果cost function变小了，则ok，反之，则再取一个更小的值；<br>下图就详细的说明了梯度下降的过程：<br><img src="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fiq5ft89upj20j809jq6p.jpg" alt="6"><br>从上面的图可以看出：初始点不同，获得的最小值也不同，因此梯度下降求得的只是局部最小值；<br>注意：下降的步伐大小非常重要，因为如果太小，则找到函数最小值的速度就很慢，如果太大，则可能会出现overshoot the minimum的现象；<br>下图就详细的说明了梯度下降的过程：<br><img src="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fiq5g0wy38j207d05cglk.jpg" alt="7"><br>如果Learning rate取值后发现J function 增长了，则需要减小Learning rate的值；<br><strong>梯度下降和线性回归结合</strong><br>梯度下降能够求出一个函数的最小值；线性回归需要求出\(\theta_0\)，\(\theta_1\)，使得cost function的最小；<br>因此我们能够对cost function运用梯度下降，即将梯度下降和线性回归进行整合，如下图所示：<br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq5g7nw0ej20k50e4aba.jpg" alt="8"><br>梯度下降是通过不停的迭代，而我们比较关注迭代的次数，因为这关系到梯度下降的执行速度，为了减少迭代次数，因此引入了Feature Scaling；<br>特征缩放法应用于梯度下降，为了加快梯度下降的执行速度；<br>思想：将各个feature的值标准化，使得取值范围大致都在-1&lt;=x&lt;=1之间；<br>常用的方法是Mean Normalization，即<br>\(\frac{x-avgx}{max-min}\)其中avgx为当前训练集中feature的平均值，max为x的最大值，min为最小值。<br>举个实际的例子，<br>有两个Feature：<br>(1)size，取值范围0~2000；<br>(2)bedroom，取值范围0~5；<br>则通过feature scaling后，\(x_1=\frac{size-1000}{2000}\),\(x_2=\frac{bedroom-2}{5}\)<br><strong>多变量线性回归</strong><br>前面我们只介绍了单变量的线性回归，即只有一个输入变量，现实世界不可能这么简单，因此此处我们要介绍多变量的线性回归,这里有个例子<br>房价其实由很多因素决定，比如size、number of bedrooms、number of floors、age of home等，这里我们假设房价由4个因素决定，如下图所示：<br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq6bpjasij20ln07v74g.jpg" alt="9"><br>这里我们可以定义出多变量线性回归的模型：<br>$$h_{\theta}(x)=\theta_0+\theta_1x_1+\theta_2x_2…+\theta_nx_n$$<br>Cost function如下：<br>$$J(\theta_0,\theta_1)=\frac{1}{2m}\sum _{i=1}^m(h_0(x^{(i)})-y^{(i)})^2$$</p>
+<p>如果取到一个正确的\(\alpha\)值，则cost function应该越来越小；<br>问题：怎么取\(\alpha\)值？<br>答：随时观察\(\alpha\)值，如果cost function变小了，则ok，反之，则再取一个更小的值；<br>下图就详细的说明了梯度下降的过程：<br><img src="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fiq5ft89upj20j809jq6p.jpg" alt="6"><br>从上面的图可以看出：初始点不同，获得的最小值也不同，因此梯度下降求得的只是局部最小值；<br>注意：下降的步伐大小非常重要，因为如果太小，则找到函数最小值的速度就很慢，如果太大，则可能会出现overshoot the minimum的现象；<br>下图就详细的说明了梯度下降的过程：<br><img src="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fiq5g0wy38j207d05cglk.jpg" alt="7"><br>如果Learning rate取值后发现J function 增长了，则需要减小Learning rate的值；<br><strong>梯度下降和线性回归结合</strong><br>梯度下降能够求出一个函数的最小值；线性回归需要求出\(\theta_0\)，\(\theta_1\)，使得cost function的最小；<br>因此我们能够对cost function运用梯度下降，即将梯度下降和线性回归进行整合，如下图所示：<br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq5g7nw0ej20k50e4aba.jpg" alt="8"><br>梯度下降是通过不停的迭代，而我们比较关注迭代的次数，因为这关系到梯度下降的执行速度，为了减少迭代次数，因此引入了Feature Scaling；<br>特征缩放法应用于梯度下降，为了加快梯度下降的执行速度；<br>思想：将各个feature的值标准化，使得取值范围大致都在-1&lt;=x&lt;=1之间；<br>常用的方法是Mean Normalization，即<br>\(\frac{x-avgx}{max-min}\)其中avgx为当前训练集中feature的平均值，max为x的最大值，min为最小值。<br>举个实际的例子，<br>有两个Feature：<br>(1)size，取值范围0~2000；<br>(2)bedroom，取值范围0~5；<br>则通过feature scaling后，\(x_1=\frac{size-1000}{2000}\),\(x_2=\frac{bedroom-2}{5}\)<br><strong>多变量线性回归</strong><br>前面我们只介绍了单变量的线性回归，即只有一个输入变量，现实世界不可能这么简单，因此此处我们要介绍多变量的线性回归,这里有个例子<br>房价其实由很多因素决定，比如size、number of bedrooms、number of floors、age of home等，这里我们假设房价由4个因素决定，如下图所示：<br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq6bpjasij20ln07v74g.jpg" alt="9"><br>这里我们可以定义出多变量线性回归的模型：<br>$$h_{\theta}(x)=\theta_0+\theta_1x_1+\theta_2x_2…+\theta_nx_n$$<br>Cost function如下：<br>$$J(\theta_0,\theta_1)=\frac{1}{2m}\sum _{i=1}^m(h_0(x^{(i)})-y^{(i)})^2$$<br>如果我们要用梯度下降解决多变量的线性回归，则我们还是可以用传统的梯度下降算法进行计算：<br><img src="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fiq5gbu04yj20s106eq3r.jpg" alt="10">  </p>
 
       
       
@@ -364,7 +365,7 @@
         <p><span>本文标题:</span><a href="/2017/08/19/梯度下降法/">梯度下降法</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 guanjun 的个人博客">guanjun</a></p>
         <p><span>发布时间:</span>2017年08月19日 - 18时41分</p>
-        <p><span>最后更新:</span>2017年08月20日 - 14时38分</p>
+        <p><span>最后更新:</span>2017年08月23日 - 17时29分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/08/19/梯度下降法/" title="梯度下降法">http://ngunauj.github.io/2017/08/19/梯度下降法/</a>
             <span class="copy-path" data-clipboard-text="原文: http://ngunauj.github.io/2017/08/19/梯度下降法/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -379,6 +380,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2017/08/23/逻辑回归/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          逻辑回归
+        
+      </div>
+    </a>
   
   
     <a href="/2017/08/09/最小二乘法/" id="article-nav-older" class="article-nav-link-wrap">
@@ -460,7 +470,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/08/23/逻辑回归/" title="上一篇: 逻辑回归">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -469,7 +481,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/梯度下降法/">梯度下降法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/09/最小二乘法/">最小二乘法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/07/kmp算法/">kmp算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/字符串哈希算法/">字符串哈希算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/23/4.状压DP/">状压DP</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/19/5.数独验证/">数独验证</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/12/3.如何高效地学习/">如何高效地学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/11/2.动态规划基础(复习)/">动态规划基础(复习)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/1.人不聪明怎么办？/">人不聪明怎么办？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/19/我的大学(2015上)/">我的大学(2015上)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/21/Markdown的基本语法 /">Markdown的基本语法</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/23/逻辑回归/">逻辑回归</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/19/梯度下降法/">梯度下降法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/09/最小二乘法/">最小二乘法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/07/kmp算法/">kmp算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/字符串哈希算法/">字符串哈希算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/23/4.状压DP/">状压DP</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/19/5.数独验证/">数独验证</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/12/3.如何高效地学习/">如何高效地学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/11/2.动态规划基础(复习)/">动态规划基础(复习)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/1.人不聪明怎么办？/">人不聪明怎么办？</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/19/我的大学(2015上)/">我的大学(2015上)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/21/Markdown的基本语法 /">Markdown的基本语法</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
