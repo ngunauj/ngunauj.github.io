@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>人不聪明怎么办？ | guanjun&#39;s blog</title>
+  <title>字典树 | guanjun&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="哎，最近被虐惨了。发现自己的智商有问题..为什么同样的一道题目，没有过多的算法，我却想不到怎么做而他们却轻松解决。我一开始想是不是我的智商有问题,其实这个问题已经翻来覆去想了很多遍了，初中，高中翻来覆去的想，每次想完都觉得不是智商的问题，是自己不够努力。还记得刘老师曾经说“马虎”的问题，不要说这道题结果算错了..说到底就是你做题少不熟练，1+1=2谁都不会算错。其实也是怎么回事…">
-<meta name="keywords" content="Think">
+  <meta name="description" content="字典树，又称单词查找树，Trie树，是一种树形结构，是一种哈希树的变种。典型应用是用于统计，排序和保存大量的字符串（但不仅限于字符串），所以经常被搜索引擎系统用于文本词频统计。它的优点是：利用字符串的公共前缀来节约存储空间，最大限度地减少无谓的字符串比较，查询效率比哈希表高。">
+<meta name="keywords" content="字典树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="人不聪明怎么办？">
-<meta property="og:url" content="http://ngunauj.github.io/2016/01/11/1.人不聪明怎么办？/index.html">
+<meta property="og:title" content="字典树">
+<meta property="og:url" content="http://ngunauj.github.io/2017/09/14/字典树/index.html">
 <meta property="og:site_name" content="guanjun&#39;s blog">
-<meta property="og:description" content="哎，最近被虐惨了。发现自己的智商有问题..为什么同样的一道题目，没有过多的算法，我却想不到怎么做而他们却轻松解决。我一开始想是不是我的智商有问题,其实这个问题已经翻来覆去想了很多遍了，初中，高中翻来覆去的想，每次想完都觉得不是智商的问题，是自己不够努力。还记得刘老师曾经说“马虎”的问题，不要说这道题结果算错了..说到底就是你做题少不熟练，1+1=2谁都不会算错。其实也是怎么回事…">
+<meta property="og:description" content="字典树，又称单词查找树，Trie树，是一种树形结构，是一种哈希树的变种。典型应用是用于统计，排序和保存大量的字符串（但不仅限于字符串），所以经常被搜索引擎系统用于文本词频统计。它的优点是：利用字符串的公共前缀来节约存储空间，最大限度地减少无谓的字符串比较，查询效率比哈希表高。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/62826d27jw1eai2znn5r6j20go09bwet.jpg">
-<meta property="og:updated_time" content="2017-08-23T09:07:16.056Z">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fj579st8cnj2076076mxl.jpg">
+<meta property="og:updated_time" content="2017-09-14T03:30:16.037Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="人不聪明怎么办？">
-<meta name="twitter:description" content="哎，最近被虐惨了。发现自己的智商有问题..为什么同样的一道题目，没有过多的算法，我却想不到怎么做而他们却轻松解决。我一开始想是不是我的智商有问题,其实这个问题已经翻来覆去想了很多遍了，初中，高中翻来覆去的想，每次想完都觉得不是智商的问题，是自己不够努力。还记得刘老师曾经说“马虎”的问题，不要说这道题结果算错了..说到底就是你做题少不熟练，1+1=2谁都不会算错。其实也是怎么回事…">
-<meta name="twitter:image" content="http://ww4.sinaimg.cn/mw690/62826d27jw1eai2znn5r6j20go09bwet.jpg">
+<meta name="twitter:title" content="字典树">
+<meta name="twitter:description" content="字典树，又称单词查找树，Trie树，是一种树形结构，是一种哈希树的变种。典型应用是用于统计，排序和保存大量的字符串（但不仅限于字符串），所以经常被搜索引擎系统用于文本词频统计。它的优点是：利用字符串的公共前缀来节约存储空间，最大限度地减少无谓的字符串比较，查询效率比哈希表高。">
+<meta name="twitter:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fj579st8cnj2076076mxl.jpg">
   
     <link rel="alternative" href="/atom.xml" title="guanjun&#39;s blog" type="application/atom+xml">
   
@@ -216,11 +216,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-1.人不聪明怎么办？" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-字典树" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/11/1.人不聪明怎么办？/" class="article-date">
-      <time datetime="2016-01-11T05:58:41.000Z" itemprop="datePublished">2016-01-11</time>
+      <a href="/2017/09/14/字典树/" class="article-date">
+      <time datetime="2017-09-14T03:27:16.000Z" itemprop="datePublished">2017-09-14</time>
 </a>
     </div>
   
@@ -233,7 +233,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      人不聪明怎么办？
+      字典树
     </h1>
   
 
@@ -242,13 +242,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Think/">Think</a>
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Think/">Think</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字典树/">字典树</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -262,7 +262,7 @@
 	
 		<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -294,36 +294,13 @@
 	    
 
        原文地址:https://ngunauj.github.io
-        <p>哎，最近被<strong>虐</strong>惨了。发现自己的智商有问题..为什么同样的一道题目，没有过多的算法，我却想不到怎么做而他们却轻松解决。<br>我一开始想是不是我的智商有问题,其实这个问题已经翻来覆去想了很多遍了，初中，高中翻来覆去的想，每次想完都觉得不是智商的问题，是自己不够努力。还记得刘老师曾经说“马虎”的问题，不要说这道题结果算错了..说到底就是你做题少不熟练，1+1=2谁都不会算错。其实也是怎么回事…  </p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>以下是我在网上找到的。  </p>
-<blockquote>
-<p>网友GayScript的回答：<br>如果你在网上搜索「NOIP 2007 全国一等奖获奖名单」应该能在江苏省那边看到我的名字，大概是在全省第四十多名。你再往上看几个名字，会发现另一个与我同校的男生，叫孙。</p>
-<p>那年我们班上去复试的有十来个，但一等奖的就两个，一个我 290 分，一个是孙 300 分。别的最高分就只有 120 分了。</p>
-<p>孙的编程特别厉害，属于那种脑袋特别灵，平时不看书也总能考最高分的。当年他高二的时候就已经是一等奖了，高三的时候再次无悬念拿了一等奖。而我花了两年的时间才拿了那个一等奖。</p>
-<p>我记得当年复试的第一道题是排序，我用的快速排序法，拿了 70 分，而孙用的平衡二叉树，100 分。第二道题是很简单但很细碎的字符串处理，我们都是满分。第三道题我用的贪心法，第四道题我好像用的弗洛伊德算法（我也记不清了），两道题加起来才得了 120 分。而孙第三题我也不记得他用了什么算法了，拿了满分。第四题他没来得及写完代码，0 分。</p>
-<p>我四道题都做了，除了第二题满分外，别的三道题算法都不够好，都是得了部分分数，总分 290 分。而他每做一题，便是最好的算法，都是满分，如果再给他一点时间，我绝对相信他第四题也能拿满分。</p>
-<p>是的，他平时上课从不认真听讲，课后也不会太花时间做练习，老师布置的程序题他总是第一个完成，然后就在那边玩游戏，而我们另外的人还在苦思冥想。</p>
-<p>的确，这世上真的有不怎么学习也能成绩拔尖的人，比如孙。</p>
-<p>的确，这世上的确有很多不够聪明的人，比如我，还有我那群小伙伴们。</p>
-<p>人不聪明怎么办？</p>
-<p>怨天尤人？在地上打滚？骂脏话？吐痰？喷口水？随地大小便？</p>
-<p><strong>还是不聪明啊</strong>。人家聪明的人还是轻而易举地拿了一等奖。</p>
-<p>是的，这个世界是不公平的。这是谁都没办法改变的事。我们能改变的，唯有自己。</p>
-<p>我拿一等奖的时候，好几个朋友都说，我拿一等奖是理所当然的。因为这群人里，我对编程付出的心血最多，当他们忙着数学奥赛、物理奥赛、化学奥赛同时学好几样奥赛的时候，我一门心思地学编程。我把班上所有学编程的同学的参考资料一一借来（有些参考资料太贵，没舍得买），一道题一道题地做完了，能独立完成的，直接 Pass ，不能独立完成的，看答案，看了答案能理解的就理解，然后自己再重做一遍，不能理解的 —— 把整个算法和编程背下来。</p>
-<p>有段时间我无法理解快速排序，便把快速排序背下来了。谁知后来真派上用场了。</p>
-<p>有段时间我无法理解弗洛伊德算法，便把弗洛伊德算法背下来了。谁知后来真派上用场了。</p>
-<p>有段时间我无法理解 …… 算法，便把 …… 算法背下来了。虽然后来没用上。</p>
-<p>有段时间我总是没办法理解动态规划，看了好久好久，做了好久好久的题目，终于灵光一闪，顿悟了。</p>
-<p>有段时间我总是没办法理解二叉树排序，看了好久好久，做了好久好久的题目，最终还是不太会。整个「树」和「图」都是我的弱项。</p>
-<p>那一年我几乎一做完了别的作业，就翻看编程资料，写程序。那时候只有周末才能去机房上课，平时便都把程序写在草稿纸上，一行一行地写，连末尾的括号、分号都不放过。</p>
-<p>那一年我少说做完了十多本参考资料，几千道程序题吧。</p>
-<p>的确，到头来我还是比不上孙的成绩，可是，我已经远远地把其他人甩到后头去了。</p>
-<p>许多人都喜欢在遇到不公平的事情时抱怨、哀叹，不知道该怎么办。仿佛抱怨完了，这事情就没了。可我总觉得，自己的现状你自己不改变，难道还会有谁来帮你改变吗？你什么都不做，抱怨完了这次，还会抱怨下次的。</p>
-<p>还有人喜欢抱怨说自己努力了也没用。我觉得特别好笑。就好像我那些同学也做了参考题，却没拿一等奖一样。我只想说 —— 我们做的题量，根本不在一个数量级。你刚刚起了个头就说看不到未来 —— 废话，要这么容易看到未来的话，这世上就没那么多一天到晚怨天尤人的人了。</p>
-<p>如果你不够聪明，而你又想改变自己，那你就得多多努力。不，不是努力一点，请你很努力。的确，你努力了未必有回报，你努力了也许还是比不上那些天生聪明的人。可我告诉你，这世上虽然真有天生聪明的人，可我们绝大多数人都是不那么聪明的。你只要多多努力，把那些同样平凡却只会抱怨、不够努力的人甩到后头就行了。  </p>
-<p><strong>你已经够矮了，那就爬到一个高处。</strong><br><a href="http://wuliaoo.com/renbucongming.html" target="_blank" rel="external">原文网址</a><br><img src="http://ww4.sinaimg.cn/mw690/62826d27jw1eai2znn5r6j20go09bwet.jpg" alt="图">  </p>
-</blockquote>
-<p>其实，到这里我想我不应该在犹豫我是不是智商比较低…我本来就不是那种聪明人，不要找借口了。而我现在能做的就是把那些和我在同一智商水平上的人超越。<strong>努力！</strong></p>
+        <p>字典树，又称单词查找树，Trie树，是一种树形结构，是一种哈希树的变种。典型应用是用于统计，排序和保存大量的字符串（但不仅限于字符串），所以经常被搜索引擎系统用于文本词频统计。它的优点是：利用字符串的公共前缀来节约存储空间，最大限度地减少无谓的字符串比较，查询效率比哈希表高。<br><a id="more"></a><br>字典树与字典很相似,当你要查一个单词是不是在字典树中,首先看单词的第一个字母是不是在字典的第一层,如果不在,说明字典树里没有该单词,如果在就在该字母的孩子节点里找是不是有单词的第二个字母,没有说明没有该单词,有的话用同样的方法继续查找.字典树不仅可以用来储存字母,也可以储存数字等其它数据。<br><strong>Trie的数据结构定义：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class node &#123;</div><div class="line">  public:</div><div class="line">    node* next[26];</div><div class="line">    int end;</div><div class="line">    node() &#123;</div><div class="line">        for (int i = 0; i &lt; 26; ++i) &#123;</div><div class="line">            next[i] = nullptr;</div><div class="line">        &#125;</div><div class="line">        end = 0;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>next是表示每层有多少种类的数，如果只是小写字母，则26即可，若改为大小写字母，则是52，若再加上数字，则是62了，这里根据题意来确定。<br>end可以表示一个字典树到此有多少相同前缀的数目，这里根据需要应当学会自由变化。<br>Trie的查找（最主要的操作）：<br>　　(1) 每次从根结点开始一次搜索；<br>　　(2) 取得要查找关键词的第一个字母，并根据该字母选择对应的子树并转到该子树继续进行检索； 　<br>　　(3) 在相应的子树上，取得要查找关键词的第二个字母,并进一步选择对应的子树进行检索。<br>　　(4) 迭代过程……<br>　　(5) 在某个结点处，关键词的所有字母已被取出，则读取附在该结点上的信息，即完成查找。<br>　　这里给出生成字典树和查找的代码：<br>这里面以208. Implement Trie (Prefix Tree)为例子给出字典树代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">class Trie &#123;</div><div class="line">public:</div><div class="line">    class node &#123;</div><div class="line">      public:</div><div class="line">        node* next[26];</div><div class="line">        int end;</div><div class="line">        node() &#123;</div><div class="line">            for (int i = 0; i &lt; 26; ++i) &#123;</div><div class="line">                next[i] = nullptr;</div><div class="line">            &#125;</div><div class="line">            end = 0;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    /** Initialize your data structure here. */</div><div class="line">    node* root;</div><div class="line">    Trie() &#123;</div><div class="line">        root = new node();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** Inserts a word into the trie. */</div><div class="line">    void insert(string word) &#123;</div><div class="line">        if (word.size() == 0) return ;</div><div class="line">        node* p = root;</div><div class="line">        for (int i = 0; i &lt; word.size(); ++i) &#123;</div><div class="line">            int x = word[i] - &apos;a&apos;;</div><div class="line">            if (p-&gt;next[x] == nullptr) &#123;</div><div class="line">                p-&gt;next[x] = new node();</div><div class="line">                p = p-&gt;next[x];</div><div class="line">            &#125; else &#123;</div><div class="line">                p = p-&gt;next[x];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        p-&gt;end = 1;        </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** Returns if the word is in the trie. */</div><div class="line">    bool search(string word) &#123;</div><div class="line">        node* p = root;</div><div class="line">        for (int i = 0; i &lt; word.size(); ++i) &#123;</div><div class="line">            int x = word[i] - &apos;a&apos;;</div><div class="line">            if (p-&gt;next[x] != nullptr) &#123;</div><div class="line">                p = p-&gt;next[x];</div><div class="line">            &#125; else &#123;</div><div class="line">                return false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        if (p-&gt;end == 1) return true;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** Returns if there is any word in the trie that starts with the given prefix. */</div><div class="line">    bool startsWith(string prefix) &#123;</div><div class="line">        node* p = root;</div><div class="line">        for (int i = 0; i &lt; prefix.size(); ++i) &#123;</div><div class="line">            int x = prefix[i] - &apos;a&apos;;</div><div class="line">            if (p-&gt;next[x] != nullptr) &#123;</div><div class="line">                p = p-&gt;next[x];</div><div class="line">            &#125; else &#123;</div><div class="line">                return false;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Your Trie object will be instantiated and called as such:</div><div class="line"> * Trie obj = new Trie();</div><div class="line"> * obj.insert(word);</div><div class="line"> * bool param_2 = obj.search(word);</div><div class="line"> * bool param_3 = obj.startsWith(prefix);</div><div class="line"> */</div></pre></td></tr></table></figure></p>
+<p>字典树还和dfs结合构造新的题目如leetcode 211. Add and Search Word - Data structure design<br>Design a data structure that supports the following two operations:<br>void addWord(word)<br>bool search(word)<br>search(word) can search a literal word or a regular expression   string containing only letters a-z or .. A . means it can represent any one letter.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">For example:</div><div class="line"></div><div class="line">addWord(&quot;bad&quot;)</div><div class="line">addWord(&quot;dad&quot;)</div><div class="line">addWord(&quot;mad&quot;)</div><div class="line">search(&quot;pad&quot;) -&gt; false</div><div class="line">search(&quot;bad&quot;) -&gt; true</div><div class="line">search(&quot;.ad&quot;) -&gt; true</div><div class="line">search(&quot;b..&quot;) -&gt; true</div><div class="line">Note:</div><div class="line">You may assume that all words are consist of lowercase letters a-z.</div></pre></td></tr></table></figure></p>
+<p>思路：字典树+dfs时间复杂度 查询的时候复杂度O(26^n) n为‘.’的个数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">class WordDictionary &#123;</div><div class="line">public:</div><div class="line">    /** Initialize your data structure here. */</div><div class="line">    WordDictionary() &#123;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    class node &#123;</div><div class="line">      public:</div><div class="line">        node* next[26];</div><div class="line">        int end;</div><div class="line">        node() &#123;</div><div class="line">            for (int i = 0; i &lt; 26; ++i) &#123;</div><div class="line">                next[i] = nullptr;</div><div class="line">            &#125;</div><div class="line">            end = 0;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    class Trie &#123;</div><div class="line">      public:</div><div class="line">        node* root;</div><div class="line">        Trie() &#123;</div><div class="line">            root = new node();</div><div class="line">        &#125;</div><div class="line">        void add(string s) &#123;</div><div class="line">            if (s.size() == 0) return ;</div><div class="line">            node* p = root;</div><div class="line">            for (int i = 0; i &lt; s.size(); ++i) &#123;</div><div class="line">                int x = s[i] - &apos;a&apos;;</div><div class="line">                if (p-&gt;next[x] == nullptr) &#123;</div><div class="line">                    p-&gt;next[x] = new node();</div><div class="line">                    p = p-&gt;next[x];</div><div class="line">                &#125; else &#123;</div><div class="line">                    p = p-&gt;next[x];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            p-&gt;end = 1;</div><div class="line">        &#125;</div><div class="line">        bool search(string&amp; s, int pos, node *p) &#123;</div><div class="line">            if (s.size() == pos &amp;&amp; p-&gt;end == 1) &#123;</div><div class="line">                return true;</div><div class="line">            &#125;</div><div class="line">            if (s[pos] == &apos;.&apos;) &#123;</div><div class="line">                for (int j = 0; j &lt; 26; ++j) &#123;</div><div class="line">                    if (p-&gt;next[j] != nullptr) &#123;</div><div class="line">                        if (search(s, pos + 1, p-&gt;next[j])) return true;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125; else &#123;</div><div class="line">                int x = (int)(s[pos] - &apos;a&apos;);</div><div class="line">                if (x &gt;= 0 &amp;&amp; x &lt; 26 &amp;&amp; p-&gt;next[x] != nullptr &amp;&amp; search(s, pos + 1, p-&gt;next[x])) return true;</div><div class="line">            &#125;</div><div class="line">            return false;  </div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    /** Adds a word into the data structure. */</div><div class="line">    void addWord(string word) &#123;</div><div class="line">        ac.add(word);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    /** Returns if the word is in the data structure. A word could contain the dot character &apos;.&apos; to represent any one letter. */</div><div class="line">    bool search(string word) &#123;</div><div class="line">        if (ac.search(word, 0, ac.root)) return true;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    private:</div><div class="line">        Trie ac;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">/**</div><div class="line"> * Your WordDictionary object will be instantiated and called as such:</div><div class="line"> * WordDictionary obj = new WordDictionary();</div><div class="line"> * obj.addWord(word);</div><div class="line"> * bool param_2 = obj.search(word);</div><div class="line"> */</div></pre></td></tr></table></figure></p>
+<p>字典树还会有其他的应用，比如给你一些数字，再询问Q个问题，每个问题给一个数字，使这个数字和之前给出的数字的异或和最大。还有维护一个前缀树集合，进行字符串的查找，删除，添加等操作。    </p>
+<hr>
+<p><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fj579st8cnj2076076mxl.jpg" alt="111x"><br>欢迎关注:)</p>
 
       
       
@@ -379,13 +356,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/01/11/1.人不聪明怎么办？/">人不聪明怎么办？</a></p>
+        <p><span>本文标题:</span><a href="/2017/09/14/字典树/">字典树</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 guanjun 的个人博客">guanjun</a></p>
-        <p><span>发布时间:</span>2016年01月11日 - 13时58分</p>
-        <p><span>最后更新:</span>2017年08月23日 - 17时07分</p>
+        <p><span>发布时间:</span>2017年09月14日 - 11时27分</p>
+        <p><span>最后更新:</span>2017年09月14日 - 11时30分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/01/11/1.人不聪明怎么办？/" title="人不聪明怎么办？">http://ngunauj.github.io/2016/01/11/1.人不聪明怎么办？/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://ngunauj.github.io/2016/01/11/1.人不聪明怎么办？/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/14/字典树/" title="字典树">http://ngunauj.github.io/2017/09/14/字典树/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://ngunauj.github.io/2017/09/14/字典树/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -398,18 +375,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/02/11/2.动态规划基础(复习)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/09/14/manacher算法/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          动态规划基础(复习)
+          manacher算法
         
       </div>
     </a>
   
   
-    <a href="/2015/11/19/我的大学(2015上)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我的大学(2015上)</div>
+    <a href="/2017/08/23/逻辑回归/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">逻辑回归</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -420,7 +397,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -487,13 +464,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/11/2.动态规划基础(复习)/" title="上一篇: 动态规划基础(复习)">
+            <a href="/2017/09/14/manacher算法/" title="上一篇: manacher算法">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2015/11/19/我的大学(2015上)/" title="下一篇: 我的大学(2015上)">
+            <a href="/2017/08/23/逻辑回归/" title="下一篇: 逻辑回归">
                 <i class="fa fa-angle-right"></i>
             </a>
         

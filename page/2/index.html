@@ -140,7 +140,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/Think/" style="font-size: 20px;">Think</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/dp/" style="font-size: 15px;">dp</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/拟合/" style="font-size: 10px;">拟合</a> <a href="/tags/梯度下降/" style="font-size: 10px;">梯度下降</a> <a href="/tags/逻辑回归/" style="font-size: 10px;">逻辑回归</a>
+                        <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/Think/" style="font-size: 20px;">Think</a> <a href="/tags/array/" style="font-size: 10px;">array</a> <a href="/tags/dp/" style="font-size: 15px;">dp</a> <a href="/tags/字典树/" style="font-size: 10px;">字典树</a> <a href="/tags/字符串/" style="font-size: 10px;">字符串</a> <a href="/tags/拟合/" style="font-size: 10px;">拟合</a> <a href="/tags/梯度下降/" style="font-size: 10px;">梯度下降</a> <a href="/tags/逻辑回归/" style="font-size: 10px;">逻辑回归</a> <a href="/tags/马拉车算法/" style="font-size: 10px;">马拉车算法</a>
                     </div>
                 </section>
                 
@@ -213,6 +213,143 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-2.动态规划基础(复习)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/11/2.动态规划基础(复习)/" class="article-date">
+      <time datetime="2016-02-11T04:14:34.000Z" itemprop="datePublished">2016-02-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/11/2.动态规划基础(复习)/">动态规划基础(复习)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>菲波那西数列<br>记忆化搜索写法(递归)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;    </div><div class="line">#include&lt;string.h&gt;  </div><div class="line">using namespace std;    </div><div class="line">int dp[50];  </div><div class="line">int f(int i)&#123;  </div><div class="line">    if(dp[i]!=-1)return dp[i];  </div><div class="line">    else return dp[i]=f(i-1)+f(i-2);  </div><div class="line">&#125;  </div><div class="line">int main()&#123;  </div><div class="line">    int n;  </div><div class="line">    while(cin&gt;&gt;n)&#123;  </div><div class="line">            memset(dp,-1,sizeof dp);  </div><div class="line">            dp[0]=1;dp[1]=1;  </div><div class="line">            cout&lt;&lt;f(n)&lt;&lt;endl;  </div><div class="line">    &#125;  </div><div class="line">    return 0;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/">dp</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/11/2.动态规划基础(复习)/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-1.人不聪明怎么办？" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/11/1.人不聪明怎么办？/" class="article-date">
+      <time datetime="2016-01-11T05:58:41.000Z" itemprop="datePublished">2016-01-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/11/1.人不聪明怎么办？/">人不聪明怎么办？</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>哎，最近被<strong>虐</strong>惨了。发现自己的智商有问题..为什么同样的一道题目，没有过多的算法，我却想不到怎么做而他们却轻松解决。<br>我一开始想是不是我的智商有问题,其实这个问题已经翻来覆去想了很多遍了，初中，高中翻来覆去的想，每次想完都觉得不是智商的问题，是自己不够努力。还记得刘老师曾经说“马虎”的问题，不要说这道题结果算错了..说到底就是你做题少不熟练，1+1=2谁都不会算错。其实也是怎么回事…  </p>
+<h2 id=""><a href="#" class="headerlink" title=""></a>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Think/">Think</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Think/">Think</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/11/1.人不聪明怎么办？/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-我的大学(2015上)" class="article article-type-post" itemscope itemprop="blogPost">
   

@@ -3,22 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>人不聪明怎么办？ | guanjun&#39;s blog</title>
+  <title>manacher算法 | guanjun&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="哎，最近被虐惨了。发现自己的智商有问题..为什么同样的一道题目，没有过多的算法，我却想不到怎么做而他们却轻松解决。我一开始想是不是我的智商有问题,其实这个问题已经翻来覆去想了很多遍了，初中，高中翻来覆去的想，每次想完都觉得不是智商的问题，是自己不够努力。还记得刘老师曾经说“马虎”的问题，不要说这道题结果算错了..说到底就是你做题少不熟练，1+1=2谁都不会算错。其实也是怎么回事…">
-<meta name="keywords" content="Think">
+  <meta name="description" content="manacher算法是一个时间复杂度为O(n)的求解最长回文串的算法。那么直奔主题，这个算法原理是什么，代码怎么写？例如输入字符串S=”abaaba”,普通的做法是求每个字符初始l=r=i,s[–l]==s[++r]能得到的最大的r-l。这种方法的时间复杂度是O(n^2)。">
+<meta name="keywords" content="马拉车算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="人不聪明怎么办？">
-<meta property="og:url" content="http://ngunauj.github.io/2016/01/11/1.人不聪明怎么办？/index.html">
+<meta property="og:title" content="manacher算法">
+<meta property="og:url" content="http://ngunauj.github.io/2017/09/14/manacher算法/index.html">
 <meta property="og:site_name" content="guanjun&#39;s blog">
-<meta property="og:description" content="哎，最近被虐惨了。发现自己的智商有问题..为什么同样的一道题目，没有过多的算法，我却想不到怎么做而他们却轻松解决。我一开始想是不是我的智商有问题,其实这个问题已经翻来覆去想了很多遍了，初中，高中翻来覆去的想，每次想完都觉得不是智商的问题，是自己不够努力。还记得刘老师曾经说“马虎”的问题，不要说这道题结果算错了..说到底就是你做题少不熟练，1+1=2谁都不会算错。其实也是怎么回事…">
+<meta property="og:description" content="manacher算法是一个时间复杂度为O(n)的求解最长回文串的算法。那么直奔主题，这个算法原理是什么，代码怎么写？例如输入字符串S=”abaaba”,普通的做法是求每个字符初始l=r=i,s[–l]==s[++r]能得到的最大的r-l。这种方法的时间复杂度是O(n^2)。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/62826d27jw1eai2znn5r6j20go09bwet.jpg">
-<meta property="og:updated_time" content="2017-08-23T09:07:16.056Z">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjdf56lv7uj20hs02rwed.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fjdf56z6blj20hs02r0sm.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fjdf55dsr3j20hs02rwec.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fjdf564cz8j20hs02r0sl.jpg">
+<meta property="og:updated_time" content="2017-09-14T03:34:02.023Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="人不聪明怎么办？">
-<meta name="twitter:description" content="哎，最近被虐惨了。发现自己的智商有问题..为什么同样的一道题目，没有过多的算法，我却想不到怎么做而他们却轻松解决。我一开始想是不是我的智商有问题,其实这个问题已经翻来覆去想了很多遍了，初中，高中翻来覆去的想，每次想完都觉得不是智商的问题，是自己不够努力。还记得刘老师曾经说“马虎”的问题，不要说这道题结果算错了..说到底就是你做题少不熟练，1+1=2谁都不会算错。其实也是怎么回事…">
-<meta name="twitter:image" content="http://ww4.sinaimg.cn/mw690/62826d27jw1eai2znn5r6j20go09bwet.jpg">
+<meta name="twitter:title" content="manacher算法">
+<meta name="twitter:description" content="manacher算法是一个时间复杂度为O(n)的求解最长回文串的算法。那么直奔主题，这个算法原理是什么，代码怎么写？例如输入字符串S=”abaaba”,普通的做法是求每个字符初始l=r=i,s[–l]==s[++r]能得到的最大的r-l。这种方法的时间复杂度是O(n^2)。">
+<meta name="twitter:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjdf56lv7uj20hs02rwed.jpg">
   
     <link rel="alternative" href="/atom.xml" title="guanjun&#39;s blog" type="application/atom+xml">
   
@@ -216,11 +219,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-1.人不聪明怎么办？" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-manacher算法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/11/1.人不聪明怎么办？/" class="article-date">
-      <time datetime="2016-01-11T05:58:41.000Z" itemprop="datePublished">2016-01-11</time>
+      <a href="/2017/09/14/manacher算法/" class="article-date">
+      <time datetime="2017-09-14T03:31:49.000Z" itemprop="datePublished">2017-09-14</time>
 </a>
     </div>
   
@@ -233,7 +236,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      人不聪明怎么办？
+      manacher算法
     </h1>
   
 
@@ -242,13 +245,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Think/">Think</a>
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Think/">Think</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/马拉车算法/">马拉车算法</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -262,7 +265,7 @@
 	
 		<div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -294,36 +297,9 @@
 	    
 
        原文地址:https://ngunauj.github.io
-        <p>哎，最近被<strong>虐</strong>惨了。发现自己的智商有问题..为什么同样的一道题目，没有过多的算法，我却想不到怎么做而他们却轻松解决。<br>我一开始想是不是我的智商有问题,其实这个问题已经翻来覆去想了很多遍了，初中，高中翻来覆去的想，每次想完都觉得不是智商的问题，是自己不够努力。还记得刘老师曾经说“马虎”的问题，不要说这道题结果算错了..说到底就是你做题少不熟练，1+1=2谁都不会算错。其实也是怎么回事…  </p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>以下是我在网上找到的。  </p>
-<blockquote>
-<p>网友GayScript的回答：<br>如果你在网上搜索「NOIP 2007 全国一等奖获奖名单」应该能在江苏省那边看到我的名字，大概是在全省第四十多名。你再往上看几个名字，会发现另一个与我同校的男生，叫孙。</p>
-<p>那年我们班上去复试的有十来个，但一等奖的就两个，一个我 290 分，一个是孙 300 分。别的最高分就只有 120 分了。</p>
-<p>孙的编程特别厉害，属于那种脑袋特别灵，平时不看书也总能考最高分的。当年他高二的时候就已经是一等奖了，高三的时候再次无悬念拿了一等奖。而我花了两年的时间才拿了那个一等奖。</p>
-<p>我记得当年复试的第一道题是排序，我用的快速排序法，拿了 70 分，而孙用的平衡二叉树，100 分。第二道题是很简单但很细碎的字符串处理，我们都是满分。第三道题我用的贪心法，第四道题我好像用的弗洛伊德算法（我也记不清了），两道题加起来才得了 120 分。而孙第三题我也不记得他用了什么算法了，拿了满分。第四题他没来得及写完代码，0 分。</p>
-<p>我四道题都做了，除了第二题满分外，别的三道题算法都不够好，都是得了部分分数，总分 290 分。而他每做一题，便是最好的算法，都是满分，如果再给他一点时间，我绝对相信他第四题也能拿满分。</p>
-<p>是的，他平时上课从不认真听讲，课后也不会太花时间做练习，老师布置的程序题他总是第一个完成，然后就在那边玩游戏，而我们另外的人还在苦思冥想。</p>
-<p>的确，这世上真的有不怎么学习也能成绩拔尖的人，比如孙。</p>
-<p>的确，这世上的确有很多不够聪明的人，比如我，还有我那群小伙伴们。</p>
-<p>人不聪明怎么办？</p>
-<p>怨天尤人？在地上打滚？骂脏话？吐痰？喷口水？随地大小便？</p>
-<p><strong>还是不聪明啊</strong>。人家聪明的人还是轻而易举地拿了一等奖。</p>
-<p>是的，这个世界是不公平的。这是谁都没办法改变的事。我们能改变的，唯有自己。</p>
-<p>我拿一等奖的时候，好几个朋友都说，我拿一等奖是理所当然的。因为这群人里，我对编程付出的心血最多，当他们忙着数学奥赛、物理奥赛、化学奥赛同时学好几样奥赛的时候，我一门心思地学编程。我把班上所有学编程的同学的参考资料一一借来（有些参考资料太贵，没舍得买），一道题一道题地做完了，能独立完成的，直接 Pass ，不能独立完成的，看答案，看了答案能理解的就理解，然后自己再重做一遍，不能理解的 —— 把整个算法和编程背下来。</p>
-<p>有段时间我无法理解快速排序，便把快速排序背下来了。谁知后来真派上用场了。</p>
-<p>有段时间我无法理解弗洛伊德算法，便把弗洛伊德算法背下来了。谁知后来真派上用场了。</p>
-<p>有段时间我无法理解 …… 算法，便把 …… 算法背下来了。虽然后来没用上。</p>
-<p>有段时间我总是没办法理解动态规划，看了好久好久，做了好久好久的题目，终于灵光一闪，顿悟了。</p>
-<p>有段时间我总是没办法理解二叉树排序，看了好久好久，做了好久好久的题目，最终还是不太会。整个「树」和「图」都是我的弱项。</p>
-<p>那一年我几乎一做完了别的作业，就翻看编程资料，写程序。那时候只有周末才能去机房上课，平时便都把程序写在草稿纸上，一行一行地写，连末尾的括号、分号都不放过。</p>
-<p>那一年我少说做完了十多本参考资料，几千道程序题吧。</p>
-<p>的确，到头来我还是比不上孙的成绩，可是，我已经远远地把其他人甩到后头去了。</p>
-<p>许多人都喜欢在遇到不公平的事情时抱怨、哀叹，不知道该怎么办。仿佛抱怨完了，这事情就没了。可我总觉得，自己的现状你自己不改变，难道还会有谁来帮你改变吗？你什么都不做，抱怨完了这次，还会抱怨下次的。</p>
-<p>还有人喜欢抱怨说自己努力了也没用。我觉得特别好笑。就好像我那些同学也做了参考题，却没拿一等奖一样。我只想说 —— 我们做的题量，根本不在一个数量级。你刚刚起了个头就说看不到未来 —— 废话，要这么容易看到未来的话，这世上就没那么多一天到晚怨天尤人的人了。</p>
-<p>如果你不够聪明，而你又想改变自己，那你就得多多努力。不，不是努力一点，请你很努力。的确，你努力了未必有回报，你努力了也许还是比不上那些天生聪明的人。可我告诉你，这世上虽然真有天生聪明的人，可我们绝大多数人都是不那么聪明的。你只要多多努力，把那些同样平凡却只会抱怨、不够努力的人甩到后头就行了。  </p>
-<p><strong>你已经够矮了，那就爬到一个高处。</strong><br><a href="http://wuliaoo.com/renbucongming.html" target="_blank" rel="external">原文网址</a><br><img src="http://ww4.sinaimg.cn/mw690/62826d27jw1eai2znn5r6j20go09bwet.jpg" alt="图">  </p>
-</blockquote>
-<p>其实，到这里我想我不应该在犹豫我是不是智商比较低…我本来就不是那种聪明人，不要找借口了。而我现在能做的就是把那些和我在同一智商水平上的人超越。<strong>努力！</strong></p>
+        <p>manacher算法是一个时间复杂度为O(n)的求解最长回文串的算法。<br>那么直奔主题，这个算法原理是什么，代码怎么写？<br>例如输入字符串S=”abaaba”,普通的做法是求每个字符初始l=r=i,s[–l]==s[++r]能得到的最大的r-l。这种方法的时间复杂度是O(n^2)。<br><a id="more"></a><br>manacher算法会事先构造好一个字符串T=”#a#b#a#a#b#a#”,为了找到最长回文字符串，manacher的做法是在从T中的第i元素开始往字符串的两边进行扩展，例如T[i-d]到T[i+d]表示的是以T[i]为中心的回文字符串，你看到这个表示应该就能理解实际上回文字符串的长度是2*d.<br>为了找到最长的回文子串，那么必不可少的就是找出以每个字符为中心的最长回文子串，然后比较之后才能找出最长的。在这里我们使用数组P来保存以T中每个字符为中心的最长回文子串的半径（既长度的一半）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">T = # a # b # a # a # b # a #</div><div class="line">P = 0 1 0 3 0 1 6 1 0 3 0 1 0</div></pre></td></tr></table></figure></p>
+<p>通过查看数组P，找到其中最大的数字，我们可以马上看出最长的回文字符串是“aba”通过插入这#字符，我们可以一次性的处理当输入字符串为奇数或者偶数的情况，而不需要分情况讨论。<br>观察P数组，我们发现P数组是中心对称的，而且在子串“aba”总相应的P数组{1,3,1}也是对称的，这种对称的情况可是说是一种特例，但是他却能帮我们减少运算量。<br>举个更复杂的例子S=”babcbabcbaccba”.<br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjdf56lv7uj20hs02rwed.jpg" alt="1"><br>上面的图片是从S转换之后得到的T,假设你已经完成了P数组的部分数值的计算，图中的实线表示当前回文串 “abcbabcba”的中心(center C )，两条虚线分别表示以C为中心的回文串的边界。你先需要计算的是 i 的值，图中i’表示的是i关于C 对称的点。那么问题来了，怎么计算更有效率的算出P[i]值。<br>假设当前i的值是13,我们需要得到P[13]的值,我们首先看下i关于C对称的i’=9的值。<br><img src="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fjdf56z6blj20hs02r0sm.jpg" alt="2"><br>两条绿色实线覆盖的区域分表表示的是以i’和i为中心的最长回文子串。我们已经知道了P[i’]=P[9]=1,那么非常明显,我们可以推断出P[i]=P[i’]=1, 因为回文子串的对称性。(这里稍微解释一下： 因为我们已经知道 a )<br>正如你在上一段看到的一样，P[i] = P[i’] = 1,这个是由回文子串关于其中心的对称性所决定的。实际上在C之后的三个元素都遵循了这种对称性（既 P[12] = P[10] = 0, P[13] = P[9] =1, P[14] = P[8] = 0 ).<br><img src="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fjdf55dsr3j20hs02rwec.jpg" alt="3"><br>现在我们到了 i = 15 这个点，i 关于 C对称的点是 i’ = 7 ,那么这里 P[15] = P[7] = 7 还会不会成立呢?<br>很不幸，这个时候如果认为P[15] 那就错了，如果我们以T[15] 为中心开始两边扩展，那么得到的最长回文子串是”a#b#c#b#a”, 这比我们根据对称性所得到的值 7 要小，那么原因是什么？<br><img src="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fjdf564cz8j20hs02r0sl.jpg" alt="4"><br>在上图中，绿色实线表示的是以C为中心的最长回文子串所覆盖的区域，红色实线表示的是与绿色区域不匹配的部分，左边的红色实线是以i’为中心的最长回文子串所覆盖区域超出绿色实线的部分。右边的红色实线是以i为中心的最长回文子串所覆盖区域超出绿色实线的部分。而绿色的虚线部分则是分别以 i 和 i’ 为中心最长回文子串与 绿色实线部分的重叠部分。<br>从图中我们可以明显的看出被两条绿色实线所覆盖的区域中，C两边的子串是完全相同的。同时绿色虚线的那部分也是关于中心对称的。但是需要注意的是 P[i’] = 7，此时以T[i’]为中心的最长回文子串超出了以C为中心的最长回文子串的左边界(图中L, 左边红色实线)，正是因为这个原因，这个时候无法再按照回文子串的对称性来处理了。<br>现在我们知道的是P[i]&gt;=5 ,为了找出P[i]最终的值，我们只有继续以P[i]为中心向两边扩展进行比较，在这个例子中P[21]不等于P[1],那么我们最终推断是P[i]=5.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">int p[2*maxn];</div><div class="line">char s[2*maxn];</div><div class="line"></div><div class="line">void manacher(char *s)&#123;</div><div class="line">    int n = strlen(s);</div><div class="line">    for (int i = n; i &gt;= 0; --i)&#123;</div><div class="line">        s[2 * i + 2] = s[i];</div><div class="line">        s[2 * i + 1] = &apos;#&apos;;</div><div class="line">    &#125;</div><div class="line">    s[0] = &apos;*&apos;;</div><div class="line">    int mx = 0;</div><div class="line">    int id;</div><div class="line">    int ans = 0;</div><div class="line">    for (int i = 1; i &lt; 2 * n + 2; ++i) &#123;</div><div class="line">        if (mx &gt; i)</div><div class="line">            p[i] = min(p[2 * id - i], mx - i);</div><div class="line">        else</div><div class="line">            p[i] = 1; </div><div class="line">        for (; s[i+p[i]] == s[i-p[i]]; ++p[i]) ;</div><div class="line">        if (p[i] + i &gt; mx)&#123;</div><div class="line">            mx = p[i] + i;</div><div class="line">            id = i;</div><div class="line">        &#125;</div><div class="line">        ans = max(p[i], ans);</div><div class="line">    &#125;</div><div class="line">    printf(&quot;%d\n&quot;, ans - 1);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>代码说明：<br>P[i]为s中第i个字符为中心的最长回文串的边界到中心的距离,i加上p[i],就是以i为中心的最长回文子串的右边界,用两个辅助变量分别是id,和mx。mx代表之前所有回文串最右右边界,id代表那最右右边界的下标。由于每次扩张都会导致mx变大，而mx最大不会超过strlen(s)，所以时间复杂度为O(n)。  </p>
 
       
       
@@ -379,13 +355,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/01/11/1.人不聪明怎么办？/">人不聪明怎么办？</a></p>
+        <p><span>本文标题:</span><a href="/2017/09/14/manacher算法/">manacher算法</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 guanjun 的个人博客">guanjun</a></p>
-        <p><span>发布时间:</span>2016年01月11日 - 13时58分</p>
-        <p><span>最后更新:</span>2017年08月23日 - 17时07分</p>
+        <p><span>发布时间:</span>2017年09月14日 - 11时31分</p>
+        <p><span>最后更新:</span>2017年09月14日 - 11时34分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/01/11/1.人不聪明怎么办？/" title="人不聪明怎么办？">http://ngunauj.github.io/2016/01/11/1.人不聪明怎么办？/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://ngunauj.github.io/2016/01/11/1.人不聪明怎么办？/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/14/manacher算法/" title="manacher算法">http://ngunauj.github.io/2017/09/14/manacher算法/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://ngunauj.github.io/2017/09/14/manacher算法/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -398,18 +374,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/02/11/2.动态规划基础(复习)/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          动态规划基础(复习)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/11/19/我的大学(2015上)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我的大学(2015上)</div>
+    <a href="/2017/09/14/字典树/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">字典树</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -420,7 +387,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -487,13 +454,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/11/2.动态规划基础(复习)/" title="上一篇: 动态规划基础(复习)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2015/11/19/我的大学(2015上)/" title="下一篇: 我的大学(2015上)">
+            <a href="/2017/09/14/字典树/" title="下一篇: 字典树">
                 <i class="fa fa-angle-right"></i>
             </a>
         
