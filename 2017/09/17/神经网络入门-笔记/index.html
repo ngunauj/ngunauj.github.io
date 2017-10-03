@@ -3,31 +3,35 @@
 <head>
   <meta charset="utf-8">
   
-  <title>梯度下降法 | guanjun&#39;s blog</title>
+  <title>神经网络入门-笔记 | guanjun&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近在学NG的机器学习课程，发现前几周的课程和前面的写的最小二乘法曲线拟合有那么神似。最小二乘法中的拟合模型就是线性(非线性)回归中假设函数h。残差的平方和就是线性回归中的损失函数。最小二乘法与梯度下降法都用来求损失函数(残差的平方和)的最小值的。那么他们之间有什么区别呢？">
-<meta name="keywords" content="梯度下降">
+  <meta name="description" content="动机对于非线性分类问题，如果用多元线性回归进行分类，需要构造许多高次项，导致特征特多学习参数过多，从而复杂度太高。直线方程y=kx+b改为二次曲线方程y=ax^ 2+bx+c时，参数(Parameter)由2个(分别是k、b)变为3个(分别是a、b、c)，特征(Feature)由1个(x)变为2个(x^2和x)。三次曲线和复杂的多项式回归会增加更多的参数和特征。">
+<meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="梯度下降法">
-<meta property="og:url" content="http://ngunauj.github.io/2017/08/19/梯度下降法/index.html">
+<meta property="og:title" content="神经网络入门-笔记">
+<meta property="og:url" content="http://ngunauj.github.io/2017/09/17/神经网络入门-笔记/index.html">
 <meta property="og:site_name" content="guanjun&#39;s blog">
-<meta property="og:description" content="最近在学NG的机器学习课程，发现前几周的课程和前面的写的最小二乘法曲线拟合有那么神似。最小二乘法中的拟合模型就是线性(非线性)回归中假设函数h。残差的平方和就是线性回归中的损失函数。最小二乘法与梯度下降法都用来求损失函数(残差的平方和)的最小值的。那么他们之间有什么区别呢？">
+<meta property="og:description" content="动机对于非线性分类问题，如果用多元线性回归进行分类，需要构造许多高次项，导致特征特多学习参数过多，从而复杂度太高。直线方程y=kx+b改为二次曲线方程y=ax^ 2+bx+c时，参数(Parameter)由2个(分别是k、b)变为3个(分别是a、b、c)，特征(Feature)由1个(x)变为2个(x^2和x)。三次曲线和复杂的多项式回归会增加更多的参数和特征。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fiq4sa3rfaj20k809wmxi.jpg">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq54ehtdnj20bc08h3yh.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fiq54mqflhj20if0eggp7.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fiq54v39sxj20mk09mabv.jpg">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq5fnb6cej20g909tjs8.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fiq5ft89upj20j809jq6p.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fiq5g0wy38j207d05cglk.jpg">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq5g7nw0ej20k50e4aba.jpg">
-<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq6bpjasij20ln07v74g.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fiq5gbu04yj20s106eq3r.jpg">
-<meta property="og:updated_time" content="2017-08-23T09:29:42.384Z">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjmeco8oh9j20fs09j74w.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fjmecop295g207n03a3yb.gif">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fjmenkjnnig206g028gle.gif">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fjmesbv5l0g207d03fq2q.gif">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fjmexmufcyj20a709lt9k.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjmezujnbxj209m06ugly.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjmf2c2d4aj209406waad.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fjmf8hg134j207a08374n.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fjmfae8sw5j207r0bkdgg.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjmfaema5lj206s0dngmc.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjmfadp93xj20940bjq3m.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fjmfafw84vj208r0d4gme.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjmfafj6byj20820e3wfm.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fjmfaez7l6j208k0gbta2.jpg">
+<meta property="og:updated_time" content="2017-09-17T08:38:36.519Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梯度下降法">
-<meta name="twitter:description" content="最近在学NG的机器学习课程，发现前几周的课程和前面的写的最小二乘法曲线拟合有那么神似。最小二乘法中的拟合模型就是线性(非线性)回归中假设函数h。残差的平方和就是线性回归中的损失函数。最小二乘法与梯度下降法都用来求损失函数(残差的平方和)的最小值的。那么他们之间有什么区别呢？">
-<meta name="twitter:image" content="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fiq4sa3rfaj20k809wmxi.jpg">
+<meta name="twitter:title" content="神经网络入门-笔记">
+<meta name="twitter:description" content="动机对于非线性分类问题，如果用多元线性回归进行分类，需要构造许多高次项，导致特征特多学习参数过多，从而复杂度太高。直线方程y=kx+b改为二次曲线方程y=ax^ 2+bx+c时，参数(Parameter)由2个(分别是k、b)变为3个(分别是a、b、c)，特征(Feature)由1个(x)变为2个(x^2和x)。三次曲线和复杂的多项式回归会增加更多的参数和特征。">
+<meta name="twitter:image" content="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjmeco8oh9j20fs09j74w.jpg">
   
     <link rel="alternative" href="/atom.xml" title="guanjun&#39;s blog" type="application/atom+xml">
   
@@ -225,11 +229,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-梯度下降法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-神经网络入门-笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/08/19/梯度下降法/" class="article-date">
-      <time datetime="2017-08-19T10:41:57.000Z" itemprop="datePublished">2017-08-19</time>
+      <a href="/2017/09/17/神经网络入门-笔记/" class="article-date">
+      <time datetime="2017-09-17T08:33:56.000Z" itemprop="datePublished">2017-09-17</time>
 </a>
     </div>
   
@@ -242,7 +246,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      梯度下降法
+      神经网络入门-笔记
     </h1>
   
 
@@ -250,14 +254,10 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/机器学习/">机器学习</a>
-    </div>
-
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/梯度下降/">梯度下降</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -303,10 +303,24 @@
 	    
 
        原文地址:https://ngunauj.github.io
-        <p>最近在学NG的机器学习课程，发现前几周的课程和前面的写的最小二乘法曲线拟合有那么神似。<br>最小二乘法中的拟合模型就是线性(非线性)回归中假设函数h。残差的平方和就是线性回归中的损失函数。最小二乘法与梯度下降法都用来求损失函数(残差的平方和)的最小值的。那么他们之间有什么区别呢？<br><a id="more"></a></p>
-<p><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>这里是知乎里面的回答<a href="https://www.zhihu.com/question/20822481" target="_blank" rel="external">二者区别</a>。  </p>
-<p>在机器学习中求解线性回归问题一般用Gradient Descent与Normal Equation两种方法。Normal Equation方法也是前面最小二乘法伪逆矩阵×Y得到参数向量的方法。梯度下降有如下特点：<br>(1)需要预先选定Learning rate；<br>(2)需要多次iteration；<br>(3)需要Feature Scaling；<br>Normal Equation方法是适用于特征数量比较小的情况。<br>当Feature数量小于100000时使用Normal Equation；<br>当Feature数量大于100000时使用Gradient Descent；<br>以上来自NG课程。其实Normal Equation方法主要在求矩阵的逆时最耗时间。Normal Equation公式\(\theta=(X^TX)^{-1}X^Ty\)<br>为了方便理解梯度下降，根据课程先从线性回归来说起。<br><strong>Linear Regression</strong><br>方法：线性回归属于监督学习，因此方法和监督学习应该是一样的，先给定一个训练集，根据这个训练集学习出一个线性函数，然后测试这个函数训练的好不好（即此函数是否足够拟合训练集数据），挑选出最好的函数（cost function最小）即可；<br>注意：<br>(1)因为是线性回归，所以学习到的函数为线性函数，即直线函数；<br>(2)因为是单变量，因此只有一个x；<br>我们能够给出单变量线性回归的模型：<br>$$h_0(x)=\theta_0+\theta_1x$$我们常称x为feature，h(x)为hypothesis；从上面“方法”中，我们肯定有一个疑问，怎么样能够看出线性函数拟合的好不好呢？<br>我们需要使用到Cost Function（代价函数），代价函数越小，说明线性回归地越好（和训练集拟合地越好），当然最小就是0，即完全拟合；<br>下图详细说明了当cost function为黑盒的时候，cost function 的作用；<br><img src="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fiq4sa3rfaj20k809wmxi.jpg" alt="1"><br>cost Function的内部构造:$$J(\theta_0,\theta_1)=\frac{1}{2m}\sum _{i=1}^m(h_0(x^{(i)})-y^{(i)})^2$$<br>\(x^{(i)}\)表示第i个向量(样本)，\(y^{(i)}\)表示y向量的第i个元素。m为训练集的数量。<br>如果\(\theta_0\)一直为0那么\(\theta_1\)与J的函数图像：<br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq54ehtdnj20bc08h3yh.jpg" alt="2"><br>如果有\(\theta_0\)与\(\theta_1\)都不固定，则\(\theta_0\)、\(\theta_1\)、J 的函数为：<br><img src="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fiq54mqflhj20if0eggp7.jpg" alt="3"><br>当然我们也能够用二维的图来表示，即等高线图；<br><img src="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fiq54v39sxj20mk09mabv.jpg" alt="4"><br>我们能够根据cost function知道这个函数拟合的好不好，但是毕竟函数有这么多，总不可能一个一个试吧？因此我们引出了梯度下降：能够找出cost function函数的最小值；<strong>梯度下降原理：将函数比作一座山，我们站在某个山坡上，往四周看，从哪个方向向下走一小步，能够下降的最快；</strong>当然解决问题的方法有很多，梯度下降只是其中一个。<br>(1)先确定向下一步的步伐大小，我们称为Learning rate；<br>(2)任意给定一个初始值\(\theta_0\)，\(\theta_1\)；<br>(3)确定一个向下的方向，并向下走预先规定的步伐，并更新；<br>(4)当下降的高度小于某个定义的值，则停止下降；<br>算法：<img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq5fnb6cej20g909tjs8.jpg" alt="5"><br>特点：<br>(1)初始点不同，获得的最小值也不同，因此梯度下降求得的只是局部最小值；<br>(2)越接近最小值时，下降速度越慢；<br>问题：如果初始值就在local minimum的位置，则\(\theta_0\)，\(\theta_1\)会如何变化？<br>答：因为\(\theta_0\)，\(\theta_1\)已经在local minimum位置，所以derivative 肯定是0，因此\(\theta_0\)，\(\theta_1\)不会变化；  </p>
-<p>如果取到一个正确的\(\alpha\)值，则cost function应该越来越小；<br>问题：怎么取\(\alpha\)值？<br>答：随时观察\(\alpha\)值，如果cost function变小了，则ok，反之，则再取一个更小的值；<br>下图就详细的说明了梯度下降的过程：<br><img src="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fiq5ft89upj20j809jq6p.jpg" alt="6"><br>从上面的图可以看出：初始点不同，获得的最小值也不同，因此梯度下降求得的只是局部最小值；<br>注意：下降的步伐大小非常重要，因为如果太小，则找到函数最小值的速度就很慢，如果太大，则可能会出现overshoot the minimum的现象；<br>下图就详细的说明了梯度下降的过程：<br><img src="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fiq5g0wy38j207d05cglk.jpg" alt="7"><br>如果Learning rate取值后发现J function 增长了，则需要减小Learning rate的值；<br><strong>梯度下降和线性回归结合</strong><br>梯度下降能够求出一个函数的最小值；线性回归需要求出\(\theta_0\)，\(\theta_1\)，使得cost function的最小；<br>因此我们能够对cost function运用梯度下降，即将梯度下降和线性回归进行整合，如下图所示：<br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq5g7nw0ej20k50e4aba.jpg" alt="8"><br>梯度下降是通过不停的迭代，而我们比较关注迭代的次数，因为这关系到梯度下降的执行速度，为了减少迭代次数，因此引入了Feature Scaling；<br>特征缩放法应用于梯度下降，为了加快梯度下降的执行速度；<br>思想：将各个feature的值标准化，使得取值范围大致都在-1&lt;=x&lt;=1之间；<br>常用的方法是Mean Normalization，即<br>\(\frac{x-avgx}{max-min}\)其中avgx为当前训练集中feature的平均值，max为x的最大值，min为最小值。<br>举个实际的例子，<br>有两个Feature：<br>(1)size，取值范围0~2000；<br>(2)bedroom，取值范围0~5；<br>则通过feature scaling后，\(x_1=\frac{size-1000}{2000}\),\(x_2=\frac{bedroom-2}{5}\)<br><strong>多变量线性回归</strong><br>前面我们只介绍了单变量的线性回归，即只有一个输入变量，现实世界不可能这么简单，因此此处我们要介绍多变量的线性回归,这里有个例子<br>房价其实由很多因素决定，比如size、number of bedrooms、number of floors、age of home等，这里我们假设房价由4个因素决定，如下图所示：<br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fiq6bpjasij20ln07v74g.jpg" alt="9"><br>这里我们可以定义出多变量线性回归的模型：<br>$$h_{\theta}(x)=\theta_0+\theta_1x_1+\theta_2x_2…+\theta_nx_n$$<br>Cost function如下：<br>$$J(\theta_0,\theta_1)=\frac{1}{2m}\sum _{i=1}^m(h_0(x^{(i)})-y^{(i)})^2$$<br>如果我们要用梯度下降解决多变量的线性回归，则我们还是可以用传统的梯度下降算法进行计算：<br><img src="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fiq5gbu04yj20s106eq3r.jpg" alt="10">  </p>
+        <p><strong>动机</strong><br>对于非线性分类问题，如果用多元线性回归进行分类，需要构造许多高次项，导致特征特多学习参数过多，从而复杂度太高。<br>直线方程y=kx+b改为二次曲线方程y=ax^ 2+bx+c时，参数(Parameter)由2个(分别是k、b)变为3个(分别是a、b、c)，特征(Feature)由1个(x)变为2个(x^2和x)。三次曲线和复杂的多项式回归会增加更多的参数和特征。<br><a id="more"></a><br>前面讲的是总结一串数字的规律，现实生活中我们往往要根据多个特征(多串数字)来分析一件事情，每个原始特征我们都看作是一个维度(Dimension)。例如一个学生的学习成绩好坏要根据语文、数学、英语等多门课程的分数来综合判断，这里每门课程都是一个维度。当使用二次曲线和多变量(多维)拟合的情况下，特征的数量会剧增，特征数=维度^2/2   这个公式可以大概计算出特征增加的情况，例如一个100维的数据，二次多项式拟合后，特征会增加到100x100/2=5000个。<br>下面是一张50x50像素的灰度图片，如果用二次多项式拟合的话，它有多少个特征呢？——大约有3百万！<br>它的维度是50x50=2500，特征数=2500x2500/2=3,125,000。如果是彩色图片，维度会增加到原来的3倍，那么特征数将增加到接近3千万了！<br>现实中，一张图片不肯能是50x50的，很显然，前面的那些回归方法已经不够用了，我们急需找到一种数学模型，能够在此基础上不断减少特征，降低维度。<br><strong>神经元</strong><br>有一种假说：“智能来源于单一的算法(One Learning Algorithm)”。如果这一假说成立，那么利用单一的算法(神经网络)处理世界上千变万化的问题就成为可能。我们不必对万事万物进行编程，只需采用以不变应万变的策略即可。有越来越多的证据证明这种假说，例如人类大脑发育初期，每一部分的职责分工是不确定的，也就是说，人脑中负责处理声音的部分其实也可以处理视觉影像。<br>下图是单个神经元(Neuron)<br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjmeco8oh9j20fs09j74w.jpg" alt="12"><br>下面是单个神经元的数学模型<br><img src="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fjmecop295g207n03a3yb.gif" alt="13"><br>解释一下：+1代表偏移值(偏置项, Bias Units)；X1,X2,X2代表初始特征；w0,w1,w2,w3代表权重(Weight)，即参数，是特征的缩放倍数；特征经过缩放和偏移后全部累加起来，此后还要经过一次激活运算然后再输出。激活函数有很多种，后面将会详细说明。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">设x1 = 10,x2 = 30, x3 = 8;</div><div class="line">w0 = 2, w1 = -1, w2 = 0.5, w3 = 6</div><div class="line">x = 1*w0 + x1*w1 + x2*w2 + x3*w3</div><div class="line">= 2 + 10*(-1) + 30*0.5 + 8*6</div><div class="line">= 55</div><div class="line">此时如果激活函数y = x/5那么输出值 y = 55 /5 = 11</div><div class="line">X1*w1+X2*w2+...+Xn*wn这种计算方法称为加权求和(Weighted Sum)法</div></pre></td></tr></table></figure></p>
+<p>这个数学模型有什么意义呢？下面我对照前面那个 y=kx+b 直线拟合的例子来说明一下<br><img src="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fjmenkjnnig206g028gle.gif" alt="14"><br>这时我们把激活函数改为Purelin(45度直线)，Purelin就是y=x，代表保持原来的值不变。<br>这样输出值就成了 Y直线点 = b + X直线点乘k，即y=kx+b。看到了吧，只是换了个马甲而已，还认的出来吗？下一步，对于每个点都进行这种运算，利用Y直线点和Y样本点计算误差，把误差累加起来，不断地更新b、k的值，由此不断地移动和旋转直线，直到误差变得很小时停住(收敛)。这个过程完全就是前面讲过的梯度下降的线性回归。<br>一般直线拟合的精确度要比曲线差很多，那么使用神经网络我们将如何使用曲线拟合？答案是使用非线性的激活函数即可，最常见的激活函数是Sigmoid(S形曲线)，Sigmoid有时也称为逻辑回归(Logistic Regression)，简称logsig。<br>y=logsig(x)=1/(1+exp(-x))<br>还有一种S形曲线也很常见到，叫双曲正切函数(tanh)，或称tansig，可以替代logsig。<br>y=tansig(x)=(exp(x)-exp(-x))/(exp(x)+exp(-x))<br><img src="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fjmesbv5l0g207d03fq2q.gif" alt="15"><br>【注】激活函数的意义：为了限制y的范围在0~1之间，同时保持x的线性和单调方向。S函数的好处是，其导函数是规则的连续函数，易于计算传递误差（Sigmoid导数 = Sigmoid<em>(1-Sigmoid)）.同时在S形中间区域具有最大的斜率，能够保持数据的灵敏度。<br><em>*神经网络</em></em><br>下面是几种比较常见的网络形式：<br><img src="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fjmexmufcyj20a709lt9k.jpg" alt="15"></p>
+<ul>
+<li>左边蓝色的圆圈叫“输入层”，中间橙色的不管有多少层都叫“隐藏层”，右边绿色的是“输出层”。</li>
+<li>每个圆圈，都代表一个神经元，也叫节点(Node)。</li>
+<li>输出层可以有多个节点，多节点输出常常用于分类问题。</li>
+<li>理论证明，任何多层网络可以用三层网络近似地表示。</li>
+<li>一般凭经验来确定隐藏层到底应该有多少个节点，在测试的过程中也可以不断调整节点数以取得最佳效果。<br>计算方法：<br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjmezujnbxj209m06ugly.jpg" alt="16">  </li>
+<li>虽然图中未标识，但必须注意每一个箭头指向的连线上，都要有一个权重(缩放)值。</li>
+<li>输入层的每个节点，都要与的隐藏层每个节点做点对点的计算，计算的方法是加权求和+激活，前面已经介绍过了。(图中的红色箭头指示出某个节点的运算关系)</li>
+<li>利用隐藏层计算出的每个值，再用相同的方法，和输出层进行计算。</li>
+<li>隐藏层用都是用Sigmoid作激活函数，而输出层用的是Purelin。这是因为Purelin可以保持之前任意范围的数值缩放，便于和样本值作比较，而Sigmoid的数值范围只能在0~1之间。</li>
+<li>起初输入层的数值通过网络计算分别传播到隐藏层，再以相同的方式传播到输出层，最终的输出值和样本值作比较，计算出误差，这个过程叫前向传播(Forward Propagation)。<br>前面讲过，使用梯度下降的方法，要不断的修改k、b两个参数值，使最终的误差达到最小。神经网络可不只k、b两个参数，事实上，网络的每条连接线上都有一个权重参数，如何有效的修改这些参数，使误差最小化，成为一个很棘手的问题。从人工神经网络诞生的60年代，人们就一直在不断尝试各种方法来解决这个问题。直到80年代，误差反向传播算法(BP算法)的提出，才提供了真正有效的解决方案，使神经网络的研究绝处逢生。<br>BP算法是一种计算偏导数的有效方法，它的基本原理是：利用前向传播最后输出的结果来计算误差的偏导数，再用这个偏导数和前面的隐藏层进行加权求和，如此一层一层的向后传下去，直到输入层(不计算输入层)，最后利用每个节点求出的偏导数来更新权重。<br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjmf2c2d4aj209406waad.jpg" alt="17"><br>为了便于理解，后面我一律用“残差(error-term)”这个词来表示误差的偏导数。<br>输出层→隐藏层：残差 = -(输出值-样本值) <em> 激活函数的导数<br>隐藏层→隐藏层：残差 = (右层每个节点的残差加权求和)</em> 激活函数的导数<br>如果输出层用Purelin作激活函数，Purelin的导数是1，输出层→隐藏层：残差 = -(输出值-样本值)<br>如果用Sigmoid(logsig)作激活函数，那么：Sigmoid导数 = Sigmoid*(1-Sigmoid)<br>输出层→隐藏层：残差 = -(Sigmoid输出值-样本值) x Sigmoid x (1-Sigmoid) = -(输出值-样本值)x输出值x(1-输出值)<br>隐藏层→隐藏层：残差 = (右层每个节点的残差加权求和) x 当前节点的Sigmoid x (1-当前节点的Sigmoid)<br>此后，对全部数据都反复进行这样的计算，直到输出的误差达到一个很小的值为止。<br>以上介绍的是目前最常见的神经网络类型，称为前馈神经网络(FeedForward Neural Network)，由于它一般是要向后传递误差的，所以也叫BP神经网络(Back Propagation Neural Network)。<br>BP神经网络的特点和局限：</li>
+<li>BP神经网络可以用作分类、聚类、预测等。需要有一定量的历史数据，通过历史数据的训练，网络可以学习到数据中隐含的知识。在你的问题中，首先要找到某些问题的一些特征，以及对应的评价数据，用这些数据来训练神经网络。</li>
+<li>BP神经网络主要是在实践的基础上逐步完善起来的系统，并不完全是建立在仿生学上的。从这个角度讲，实用性 &gt; 生理相似性。</li>
+<li>BP神经网络中的某些算法，例如如何选择初始值、如何确定隐藏层的节点个数、使用何种激活函数等问题，并没有确凿的理论依据，只有一些根据实践经验总结出的有效方法或经验公式。</li>
+<li>BP神经网络虽然是一种非常有效的计算方法，但它也以计算超复杂、计算速度超慢、容易陷入局部最优解等多项弱点著称，因此人们提出了大量有效的改进方案，一些新的神经网络形式也层出不穷。<br><img src="http://wx1.sinaimg.cn/mw690/d29e4cf8ly1fjmf8hg134j207a08374n.jpg" alt="1"><br><img src="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fjmfae8sw5j207r0bkdgg.jpg" alt="2"><br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjmfaema5lj206s0dngmc.jpg" alt="3"><br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjmfadp93xj20940bjq3m.jpg" alt="4"><br><img src="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fjmfafw84vj208r0d4gme.jpg" alt="5"><br><img src="http://wx2.sinaimg.cn/mw690/d29e4cf8ly1fjmfafj6byj20820e3wfm.jpg" alt="6"><br><img src="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fjmfaez7l6j208k0gbta2.jpg" alt="7"><br>这里介绍的是计算完一条记录，就马上更新权重，以后每计算完一条都即时更新权重。实际上批量更新的效果会更好，方法是在不更新权重的情况下，把记录集的每条记录都算过一遍，把要更新的增值全部累加起来求平均值，然后利用这个平均值来更新一次权重，然后利用更新后的权重进行下一轮的计算，这种方法叫批量梯度下降(Batch Gradient Descent)。<br>reference:<a href="http://c.tieba.baidu.com/p/3013551686?pid=49703036815&amp;see_lz=1" target="_blank" rel="external">http://c.tieba.baidu.com/p/3013551686?pid=49703036815&amp;see_lz=1</a></li>
+</ul>
 
       
       
@@ -362,13 +376,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/08/19/梯度下降法/">梯度下降法</a></p>
+        <p><span>本文标题:</span><a href="/2017/09/17/神经网络入门-笔记/">神经网络入门-笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 guanjun 的个人博客">guanjun</a></p>
-        <p><span>发布时间:</span>2017年08月19日 - 18时41分</p>
-        <p><span>最后更新:</span>2017年08月23日 - 17时29分</p>
+        <p><span>发布时间:</span>2017年09月17日 - 16时33分</p>
+        <p><span>最后更新:</span>2017年09月17日 - 16时38分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/08/19/梯度下降法/" title="梯度下降法">http://ngunauj.github.io/2017/08/19/梯度下降法/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://ngunauj.github.io/2017/08/19/梯度下降法/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/17/神经网络入门-笔记/" title="神经网络入门-笔记">http://ngunauj.github.io/2017/09/17/神经网络入门-笔记/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://ngunauj.github.io/2017/09/17/神经网络入门-笔记/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -381,18 +395,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/08/23/逻辑回归/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          逻辑回归
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/09/最小二乘法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">最小二乘法</div>
+    <a href="/2017/09/14/manacher算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">manacher算法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -470,13 +475,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/08/23/逻辑回归/" title="上一篇: 逻辑回归">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/08/09/最小二乘法/" title="下一篇: 最小二乘法">
+            <a href="/2017/09/14/manacher算法/" title="下一篇: manacher算法">
                 <i class="fa fa-angle-right"></i>
             </a>
         
