@@ -3,46 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的大学(2015上) | guanjun&#39;s blog</title>
+  <title>ros工具二 | guanjun&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大学这几年没有刻意的出去旅游..这里都是一些参加程序设计竞赛的记录 留给未来的自己看东北四省赛哈尔滨站时候的图片，像素很渣。">
-<meta name="keywords" content="Think">
+  <meta name="description" content="1.查看参数列表 rosparam list   2.查询参数rosparam get parameter_name,如rosparam get /rosdistro   3.设置参数rosparam set parameter_name parameter_value">
+<meta name="keywords" content="ros">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的大学(2015上)">
-<meta property="og:url" content="http://ngunauj.github.io/2015/11/19/我的大学(2015上)/index.html">
+<meta property="og:title" content="ros工具二">
+<meta property="og:url" content="http://ngunauj.github.io/2017/10/07/ros工具二/index.html">
 <meta property="og:site_name" content="guanjun&#39;s blog">
-<meta property="og:description" content="大学这几年没有刻意的出去旅游..这里都是一些参加程序设计竞赛的记录 留给未来的自己看东北四省赛哈尔滨站时候的图片，像素很渣。">
+<meta property="og:description" content="1.查看参数列表 rosparam list   2.查询参数rosparam get parameter_name,如rosparam get /rosdistro   3.设置参数rosparam set parameter_name parameter_value">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193741/84370c8c-67b7-11e5-9962-04193ab4aa10.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193740/8434c454-67b7-11e5-8baf-10dffc7edc1b.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193742/84387cde-67b7-11e5-8eaf-f3695f5be9f8.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193743/8439537a-67b7-11e5-93d9-5808dd96c03e.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193744/843bf396-67b7-11e5-96a2-7014372f6e8e.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193745/843f322c-67b7-11e5-9119-d7b5eaf9b61a.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193746/848272a8-67b7-11e5-9d4a-b886e70d4df1.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193749/8489d02a-67b7-11e5-8848-5a09fc02e94c.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193747/8489189c-67b7-11e5-8da2-14b18f86a30a.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193748/84897670-67b7-11e5-84a8-74e784570517.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193750/848f4cee-67b7-11e5-8b35-d2756f33076e.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193751/8492bc6c-67b7-11e5-98a0-0e2fcccb888c.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193752/84d36de8-67b7-11e5-86d6-6b72ffd2319f.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193753/84d6012a-67b7-11e5-8cf7-76562ee08e31.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193754/84d86802-67b7-11e5-800c-d483ef3d6c06.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193755/84da55cc-67b7-11e5-8388-366abfed2de2.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193760/85271290-67b7-11e5-88f7-2e5238c9ccec.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193756/84dfecc6-67b7-11e5-9ee1-56da4b70ae34.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193757/84e7bad2-67b7-11e5-8a89-a6df87bdcfda.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193761/8529df0c-67b7-11e5-95d6-47bf2074c778.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193762/852f14a4-67b7-11e5-9492-cfc040c1fa6e.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193763/85380d34-67b7-11e5-9ba4-9947599c5fff.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193764/857248a0-67b7-11e5-83bf-5ec21659c5de.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193759/8523fff6-67b7-11e5-976b-dda61863a733.jpg">
-<meta property="og:image" content="https://cloud.githubusercontent.com/assets/13215594/10193758/852364d8-67b7-11e5-9c69-605ac4636a36.jpg">
-<meta property="og:updated_time" content="2017-08-07T11:48:56.509Z">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fk9n0qs5d8j20en02ydfq.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fk9ngtml2kj20de0dla9z.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fk9ngtml2kj20de0dla9z.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fk9qv1pe07j20pn0a7dgi.jpg">
+<meta property="og:updated_time" content="2017-10-07T08:37:28.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的大学(2015上)">
-<meta name="twitter:description" content="大学这几年没有刻意的出去旅游..这里都是一些参加程序设计竞赛的记录 留给未来的自己看东北四省赛哈尔滨站时候的图片，像素很渣。">
-<meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/13215594/10193741/84370c8c-67b7-11e5-9962-04193ab4aa10.jpg">
+<meta name="twitter:title" content="ros工具二">
+<meta name="twitter:description" content="1.查看参数列表 rosparam list   2.查询参数rosparam get parameter_name,如rosparam get /rosdistro   3.设置参数rosparam set parameter_name parameter_value">
+<meta name="twitter:image" content="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fk9n0qs5d8j20en02ydfq.jpg">
   
     <link rel="alternative" href="/atom.xml" title="guanjun&#39;s blog" type="application/atom+xml">
   
@@ -240,11 +219,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-我的大学(2015上)" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ros工具二" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/19/我的大学(2015上)/" class="article-date">
-      <time datetime="2015-11-19T12:18:21.000Z" itemprop="datePublished">2015-11-19</time>
+      <a href="/2017/10/07/ros工具二/" class="article-date">
+      <time datetime="2017-10-07T04:43:25.000Z" itemprop="datePublished">2017-10-07</time>
 </a>
     </div>
   
@@ -257,7 +236,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      我的大学(2015上)
+      ros工具二
     </h1>
   
 
@@ -265,14 +244,10 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Think/">Think</a>
-    </div>
-
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Think/">Think</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ros/">ros</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -318,7 +293,34 @@
 	    
 
        原文地址:https://ngunauj.github.io
-        <p>大学这几年没有刻意的出去旅游..这里都是一些参加程序设计竞赛的记录 留给未来的自己看<br>东北四省赛哈尔滨站时候的图片，像素很渣。<br><a id="more"></a><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193741/84370c8c-67b7-11e5-9962-04193ab4aa10.jpg" alt="20150515_171218">.<br><img src="https://cloud.githubusercontent.com/assets/13215594/10193740/8434c454-67b7-11e5-8baf-10dffc7edc1b.jpg" alt="20150515_171451"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193742/84387cde-67b7-11e5-8eaf-f3695f5be9f8.jpg" alt="20150515_173459"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193743/8439537a-67b7-11e5-93d9-5808dd96c03e.jpg" alt="20150515_175042"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193744/843bf396-67b7-11e5-96a2-7014372f6e8e.jpg" alt="20150515_175113"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193745/843f322c-67b7-11e5-9119-d7b5eaf9b61a.jpg" alt="20150515_175212"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193746/848272a8-67b7-11e5-9d4a-b886e70d4df1.jpg" alt="20150515_181238"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193749/8489d02a-67b7-11e5-8848-5a09fc02e94c.jpg" alt="20150515_181304"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193747/8489189c-67b7-11e5-8da2-14b18f86a30a.jpg" alt="20150515_181350"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193748/84897670-67b7-11e5-84a8-74e784570517.jpg" alt="20150515_181541"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193750/848f4cee-67b7-11e5-8b35-d2756f33076e.jpg" alt="20150515_181550"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193751/8492bc6c-67b7-11e5-98a0-0e2fcccb888c.jpg" alt="20150515_181607"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193752/84d36de8-67b7-11e5-86d6-6b72ffd2319f.jpg" alt="20150515_181635"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193753/84d6012a-67b7-11e5-8cf7-76562ee08e31.jpg" alt="20150515_181721"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193754/84d86802-67b7-11e5-800c-d483ef3d6c06.jpg" alt="20150515_181729"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193755/84da55cc-67b7-11e5-8388-366abfed2de2.jpg" alt="20150515_201914"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193760/85271290-67b7-11e5-88f7-2e5238c9ccec.jpg" alt="img20150517203554"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193756/84dfecc6-67b7-11e5-9ee1-56da4b70ae34.jpg" alt="20150517_164130"><br>这是在大连2015东北四省赛暨全国邀请赛<br><img src="https://cloud.githubusercontent.com/assets/13215594/10193757/84e7bad2-67b7-11e5-8a89-a6df87bdcfda.jpg" alt="20150607_153054"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193761/8529df0c-67b7-11e5-95d6-47bf2074c778.jpg" alt="img20150606195746"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193762/852f14a4-67b7-11e5-9492-cfc040c1fa6e.jpg" alt="img20150607152318"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193763/85380d34-67b7-11e5-9ba4-9947599c5fff.jpg" alt="img20150607195527"><br>这是在北京王府井  codecup<br><img src="https://cloud.githubusercontent.com/assets/13215594/10193764/857248a0-67b7-11e5-83bf-5ec21659c5de.jpg" alt="img20150910162657"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193759/8523fff6-67b7-11e5-976b-dda61863a733.jpg" alt="20150910_140446"><br><img src="https://cloud.githubusercontent.com/assets/13215594/10193758/852364d8-67b7-11e5-9c69-605ac4636a36.jpg" alt="20150910_140453"><br>2015年的东北四省赛举办了两场，ccpc和icpc  </p>
+        <p>1.查看参数列表 rosparam list  </p>
+<p>2.查询参数rosparam get parameter_name,如rosparam get /rosdistro  </p>
+<p>3.设置参数rosparam set parameter_name parameter_value<br><a id="more"></a><br>4.运行turtlesim_node节点，再查看参数列表rosparam list,我们看到<br>/background_b<br>/background_g<br>/background_r<br>三个参数，将/background_b 设置成255我们没看到变化，这是因为turtlesim_node节点没有加载参数，而加载参数需要运行rosservice call /clear  </p>
+<p>5.需要引起高度注意的是,更新的参数值不会自动“推送”到节点。恰恰相反,如果节点关心它的一些或者所有参数是否改变,必须明确向参数服务器请求这些参数的值。同样地,如果希望改变某个活跃节点的参数值,我们必须知道该节点如何或是否重新查询参数。  </p>
+<p>6.使用C++获取参数并赋值　　<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">void ros::param::set(parameter_name, input_value);</div><div class="line">bool ros::param::get(parameter_name, output_value);</div></pre></td></tr></table></figure></p>
+<p>7.服务调用是双向的,一个节点给另一个节点发送信息并等待响应,因此信息流是双向的。作为对比,当消息发布后,并没有响应的概念,甚至不能保证系统内有节点订阅了这些消<br>息。  </p>
+<p>8.服务调用的基本流程:<br>一个客户端(client)节点发送一些称为请求(request)的数据到一个服务器(server)节点,并且等待回应。服务器节点接收到请求后,采取一些行动(计算、配置软件或硬件、改变<br>自身行为等),然后发送一些称为响应(response)的数据给客户端节点。<br><img src="http://wx4.sinaimg.cn/mw690/d29e4cf8ly1fk9n0qs5d8j20en02ydfq.jpg" alt="1">  </p>
+<p>9.列出所有服务rosservice list  </p>
+<p>10.查看某个节点的服务类型 要查看一个特定节点提供的服务,使用 rosnode info 命令:rosnode info node-name,如rosnode info turtlesim  </p>
+<p>11.查找提供服务的节点rosservice node service-name  </p>
+<p>12.查找服务的数据类型 rosservice info service-name  </p>
+<p>13.查看服务数据类型 当服务的数据类型已知时,我们可以使用rossrv 指令来获得此服务数据类型的详情:rossrv show service-data-type-name  </p>
+<p>14.从命令行调用服务; 为了直观地观察服务是如何工作的,你可以使用下面这条指令,从命令行中调用它们:rosservice call service-name request-content 例如<br>rosservice call /spawn 3 3 0 Mikey 这条服务调用的效果是在现有仿真器中,位置 ( x , y ) = (3,3) 处创建一个名为“Mikey”的新海龟,其朝向角度 θ = 0 。<br><img src="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fk9ngtml2kj20de0dla9z.jpg" alt="2"></p>
+<p>15.声明请求和响应的类型 就像消息类型一样每一种服务数据类型都对应一个我们必须包含的相关 C++头文件  </p>
+<p>16.创建客户端对象 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ros::ServiceClient client = node_handle.serviceClient&lt;service_type&gt;(service_name);</div></pre></td></tr></table></figure></p>
+<p>这条指令有三个重要部分。<br>node_handle 是常用的 ros::NodeHandle 对象,这里我们将调用它的 serviceClient 方法。<br>service_type 是我们在上面头文件中定义的服务对象的数据类型,在本例中,类型为 turtlesim::Spawn。<br>service_name 是一个字符串,说明了我们想要调用的服务名称。再次强调,这应当是一个相对名称,虽然也可以声明为全局名称。例子中使用的是相对名称“spawn”。  </p>
+<p>17.创建请求和响应对象 一旦有了 ros::ServiceClient 实例,下一步就是创建一个请求对象来容纳送往服务器的数据。我们上面包含的头文件中分别定义了请求和响应的类 ,命名为Request和Response。这些类必须通过功能包名称和服务类型来引用,如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">#include &lt;ros/ros.h&gt;</div><div class="line">//The srv class for the service.</div><div class="line">#include &lt;turtlesim/Spawn.h&gt;</div><div class="line">int main(int argc, char** argv) &#123;</div><div class="line">	ros::init(argc, argv,&quot;spawn_turtle&quot;);</div><div class="line">    ros::NodeHandle nh;</div><div class="line">	//Create a client object for the spawn service.This needs to know the data type of the service and its name.</div><div class="line">	ros::ServiceClient spawnClient = nh.serviceClient&lt;turtlesim::Spawn&gt;(&quot;spawn&quot;);</div><div class="line">    //Create the request and response objects.</div><div class="line">	turtlesim::Spawn::Request req ;</div><div class="line">	turtlesim::Spawn::Response resp ;</div><div class="line">	//Fill in the request data members.</div><div class="line">	req.x = 2;</div><div class="line">	req.y = 3;</div><div class="line">	req.theta = M_PI/2;</div><div class="line">	req.name = &quot;Pik&quot; ;</div><div class="line">	//Actually call the service. This won&apos;t return until</div><div class="line">	//the service is complete .</div><div class="line">	bool success = spawnClient.call(req, resp);</div><div class="line">	//Check for success and use the response .</div><div class="line">	if(success) &#123;</div><div class="line">		ROS_INFO_STREAM(&quot;Spawned  a turtle named  &quot;&lt;&lt; resp.name);</div><div class="line">	&#125; else &#123;</div><div class="line">	ROS_ERROR_STREAM(&quot;Failed to spawn.&quot;) ;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行结果：<br><img src="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fk9ngtml2kj20de0dla9z.jpg" alt="３"></p>
+<p>18.创建一个服务器程序<br>编写服务的回调函数 如同订阅一样,节点提供的每一个服务必须关联一个回调函数,服务的回调函数原型如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">bool function_name(</div><div class="line">package_name::service_type::Request &amp;req),</div><div class="line">package_name::service_type::Response &amp;resp)</div><div class="line">) &#123;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>节点每次接收到一个服务请求,ROS 就执行一次回调函数。参数 Request 中包含了来自于客户端的数据。回调函数的工作是给Response 对象的数据成员赋值。 Request 和 Response 数据类型与上面在客户端使用的一致,因此需要相同的头文件和相同的包依赖关系来编译。回调函数返回 true 表明成功,返回 false 则表示失败。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#include &lt;ros/ros.h&gt;</div><div class="line">#include &lt;std_srvs/Empty.h&gt;</div><div class="line">#include &lt;geometry_msgs/Twist.h&gt;</div><div class="line">bool forward = true;</div><div class="line">bool toggleForward (std_srvs::Empty::Request &amp;req, std_srvs::Empty::Response &amp;resp) &#123;</div><div class="line">	forward = !forward;</div><div class="line">	ROS_INFO_STREAM(&quot;Now sending &quot; &lt;&lt;(forward ? &quot;forward&quot; : &quot;rotate&quot;) &lt;&lt; &quot;commands.&quot;);</div><div class="line">	return true ;</div><div class="line">&#125;</div><div class="line">int main(int argc, char** argv) &#123;</div><div class="line">	ros::init(argc, argv, &quot;pubvel_toggle&quot;);</div><div class="line">	ros::NodeHandle nh ;</div><div class="line">	// Register our service with the master .</div><div class="line">	ros::ServiceServer server = nh.advertiseService (&quot;toggle_forward&quot;, &amp;toggleForward);</div><div class="line">	// Publish commands, using the latest value for forward ,</div><div class="line">	// until the node shuts down.</div><div class="line">	ros::Publisher pub = nh.advertise &lt;geometry_msgs::Twist&gt;(&quot;turtle1/cmd_vel&quot;, 1000);</div><div class="line">	ros::Rate rate(2);</div><div class="line">	while(ros::ok()) &#123;</div><div class="line">		geometry_msgs::Twist msg;</div><div class="line">		msg.linear.x = forward ? 1.0 : 0.0;</div><div class="line">		msg.angular.z = forward ? 0.0 : 1.0;</div><div class="line">		pub.publish(msg);</div><div class="line">		ros::spinOnce();</div><div class="line">		rate.sleep();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在该例中, Request 和 Response 都使用了 std_srvs/Empty (空字符串)作为其数据类型,因此无需针对这两个对象做任何数据处理。回调函数的唯一工作是切换一个称为 forward 的全局布尔变量,用于管理在主函数中发布的速度消息<br>为了测试pubvel_toggle样例程序 , 编译它并且启动turtlesim_node和pubvel_toggle两个节点。两者运行的同时,你可以通过从命令行调用 toggle_forward 服务来在平移和转动中反复切换运动控制指令。rosservice call /toggle_forward, 反复执行rosservice call /toggle_forward得到试验结果如下<br><img src="http://wx3.sinaimg.cn/mw690/d29e4cf8ly1fk9qv1pe07j20pn0a7dgi.jpg" alt="22">  </p>
+<p>19.录制包文件 rosbag record -O filename.bag topic-names  </p>
+<p>20.rosbag record -a 记录当前发布的所有话题的消息。  </p>
+<p>21.rosbag record -j 启用包文件的压缩  </p>
+<p>22.回放包文件 rosbag play filename.bag,这里可以加参数，比如-l 代表循环播放 -r 0.5 代表以0.5倍速度播放  -s 10 代表从第10秒播放  </p>
+<p>23.检查文件包 rosbag info filename.bag  </p>
+<p>24.ROS的rosbag功能包里面也 提 供了名为record和play的可执行文件。和rosbag record 及rosbag play相比,这些程序有相同的功能,并且接受相同的命令行参数。所以可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rosrun rosbag record -O filename.bag topic-names</div><div class="line">rosrun rosbag play filename.bag</div></pre></td></tr></table></figure></p>
+<p>25.<code>&lt;node　pkg=&quot;rosbag&quot;　name=&quot;record&quot;　type=&quot;record&quot;　args=&quot;-O filename.bag topic-names&quot;/&gt;</code> launch 文件可以这么调用</p>
 
       
       
@@ -374,13 +376,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/11/19/我的大学(2015上)/">我的大学(2015上)</a></p>
+        <p><span>本文标题:</span><a href="/2017/10/07/ros工具二/">ros工具二</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 guanjun 的个人博客">guanjun</a></p>
-        <p><span>发布时间:</span>2015年11月19日 - 20时18分</p>
-        <p><span>最后更新:</span>2017年08月07日 - 19时48分</p>
+        <p><span>发布时间:</span>2017年10月07日 - 12时43分</p>
+        <p><span>最后更新:</span>2017年10月07日 - 16时37分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/11/19/我的大学(2015上)/" title="我的大学(2015上)">http://ngunauj.github.io/2015/11/19/我的大学(2015上)/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://ngunauj.github.io/2015/11/19/我的大学(2015上)/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/10/07/ros工具二/" title="ros工具二">http://ngunauj.github.io/2017/10/07/ros工具二/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://ngunauj.github.io/2017/10/07/ros工具二/　　作者: guanjun" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -393,18 +395,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/01/11/1.人不聪明怎么办？/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          人不聪明怎么办？
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/08/21/Markdown的基本语法 /" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Markdown的基本语法</div>
+    <a href="/2017/10/05/ros工具-一/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ros工具(一)</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -482,13 +475,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/11/1.人不聪明怎么办？/" title="上一篇: 人不聪明怎么办？">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2015/08/21/Markdown的基本语法 /" title="下一篇: Markdown的基本语法">
+            <a href="/2017/10/05/ros工具-一/" title="下一篇: ros工具(一)">
                 <i class="fa fa-angle-right"></i>
             </a>
         
